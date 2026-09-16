@@ -1,0 +1,24 @@
+диалог:
+
+type - тип (диалог/выбор/fade-in/fade-out)
+name - имя автора реплики
+name_color- цвет имени
+say - реплика
+background - путь к фону вида "url('bg/bg.png')", если не нужно менять фон то заполнять необязательно
+sprite - путь к спрайту вида "sprites/firstCharacter.png", если не нужно менять спрайт то заполнять необязательно
+spriteSize - размер спрайта, исходный - 100
+spriteX - положение спрайта на сцене по оси X
+spriteY - положение спрайта на сцене по оси Y
+spriteBrightness - яркость спрайта, исходная - 100
+
+
+выбор:
+
+type - тип (диалог/выбор/fade-in/fade-out)
+numberOfOptions - колво опций (например 2)
+option_n - текст опции n 
+option_1_result - какие lp изменяет опция n
+option_1_result_value - какое количество lp изменяет опция n
+
+fade-in: Переписываешь прошлую строчку но в type пишешь fade-in
+fade-out: Пишешь диалог но в type пишешь fade-out

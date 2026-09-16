@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="ru">
+    <meta charset="utf-8">
+    <title>Death is coming, but I don't mind.</title>
+    <script type="module" src="script.js"></script> 
+    <style>
+        html, body{
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: rgb(10,15,25);
+        }
+        .main-wrapper{
+            display: grid;
+            place-items: center;
+            align-items: center;
+            width: 100%;
+            min-height: 100vh;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .interface{
+            width: 100%;
+            max-width: 1280px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        button{
+            color: rgba(255, 255, 255,33%);
+            font-size: 18px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: rgba(60, 60, 60, 33%);
+            border-radius: 15.5px;
+            padding: 11px 17.5px;
+            border: 3px rgba(255, 255, 255, 25%) solid;
+            cursor: pointer;
+            display:flex;
+            position: absolute;
+        }
+        
+        .full_screen{
+            z-index: 999;
+            top: 15px;
+            left: 15px;
+        }
+
+        .pause{
+            z-index: 998;
+            top: 15px;
+            right: 15px;
+        }
+
+        button:hover{
+            transform: scale(1.03);
+        }
+
+        .substrate{
+            background-color: rgba(20,20,20,50%);
+            width: 85%;
+            padding: 20px;
+            border-radius: 25px;
+            border: 3px rgba(255,255,255, 33%) solid;
+            position:fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            backdrop-filter: blur(5px);
+
+            justify-content: center;
+            text-align: center;
+            color:white;
+            font-size: 20px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            animation: substrateStart 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes substrateStart{
+            0%{
+                opacity: 0;
+                filter: blur(5px);
+            }
+            100%{
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+
+        .name{
+            font-size: 26px;
+        }
+
+        .say{
+            position:static;
+        }
+
+        .pauseMenu{
+            visibility: hidden;
+            background-color: rgba(20,20,20,50%);
+            width: 85%;
+            height: 85%;
+            padding: 20px;
+            border-radius: 25px;
+            border: 3px rgba(255,255,255, 33%) solid;
+            position:fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            backdrop-filter: blur(5px);
+
+            justify-content: center;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .pauseButtons{
+            color: white;
+            position: static;
+            margin: 30px auto;
+            border-color: white;
+            width: auto;
+        }
+
+        .substrate.fade-out{
+            animation: subFadeOut 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes subFadeOut{
+            0%{
+                opacity: 1;
+                filter: blur(0);
+                width: 85%;
+            }
+            100%{
+                opacity: 0;
+                filter: blur(3px);
+                visibility: hidden;
+                width: 25%;
+            }
+        }
+
+        .pauseMenu.fade-in{
+            animation: pauseMenuFadeIn 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes pauseMenuFadeIn{
+            0%{
+                visibility: visible;
+                opacity: 0;
+                filter: blur(3px);
+                height: 10%;
+                width: 85%;
+            }
+            100%{
+                opacity: 1;
+                filter: blur(0);
+                visibility: visible;
+                height: 85%;
+                width: 25%;
+            }
+        }
+
+        .substrate.fade-in{
+            animation: subFadeIn 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes subFadeIn{
+            0%{
+                opacity: 0;
+                filter: blur(3px);
+                visibility: visible;
+                width: 25%;
+            }
+            100%{
+                opacity: 1;
+                filter: blur(0);
+                visibility: visible;
+                width: 85%;
+            }
+        }
+
+        .pauseMenu.fade-out{
+            animation: pauseMenuFadeOut 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes pauseMenuFadeOut{
+            0%{
+                opacity: 1;
+                filter: blur(0);
+                height: 85%;
+                visibility: visible;
+                width: 25%;
+            }
+            100%{
+                opacity: 0;
+                filter: blur(3px);
+                visibility: hidden;
+                height: 10%;
+                width: 85%;
+            }
+        }
+
+        .pauseMenu.fade-in-permit{
+            animation: pauseMenuFadeInPermit 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes pauseMenuFadeInPermit{
+            0%{
+                opacity: 0;
+                filter: blur(3px);
+                height: 10%;
+                visibility: visible;
+                width: 2%;
+            }
+            100%{
+                opacity: 1;
+                filter: blur(0);
+                visibility: visible;
+                height: 85%;
+                width: 25%;
+            }
+        }
+
+        .pauseMenu.fade-out-permit{
+            animation: pauseMenuFadeOutPermit 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes pauseMenuFadeOutPermit{
+            0%{
+                opacity: 1;
+                filter: blur(0);
+                height: 85%;
+                visibility: visible;
+                width: 25%;
+            }
+            100%{
+                opacity: 0;
+                filter: blur(3px);
+                visibility: hidden;
+                height: 10%;
+                width: 2%;
+            }
+        }
+
+        .sliderBlur{
+            align-items: center;
+            gap: 10px;
+        }
+
+        .nextButton{
+            font-size: 24px;
+            border: rgba(255,255,255,33%) solid ;
+            z-index: 997;
+            top: 15px;
+            right: -75px;
+        }
+
+        .choices{
+            visibility: hidden;
+            width: 85%;
+            height: 85%;
+            padding: 20px;
+            border-radius: 25px;
+            position:fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            justify-content: center;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .choices.fade-in{
+            animation: choicesFade-in 0.66s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes choicesFade-in{
+            0%{
+                opacity: 0;
+                filter: blur(3px);
+                height: 10%;
+                width: 85%;
+                transform: scale(0.8, 0.1);
+            }
+            100%{
+                opacity: 1;
+                filter: blur(0);
+                height: 85%;
+                width: 25%;
+                transform: scale(1, 1);
+                transform: translateX(-50%);
+            }
+        }
+
+        .choiceButton{
+            color: white;
+            position: static;
+            margin: 30px auto;
+            border: 4px white solid;
+            width: auto;
+            font-size: 36px;        
+        }
+
+        .choices.fade-out{
+            animation: choicesFade-out 0.66s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes choicesFade-out{
+            0%{
+                opacity: 1;
+                filter: blur(0);
+                height: 85%;
+                width: 25%;
+                transform: scale(1, 1);
+                transform: translateX(-50%);
+            }
+            100%{
+                opacity: 0;
+                filter: blur(3px);
+                height: 10%;
+                width: 85%;
+                transform: scale(0.6, 0.1);
+                visibility: hidden;
+            }
+        }
+
+        .fade-in-child{
+            background-color: black;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            animation: fade-in-child 0.66s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            position: absolute;
+        }
+
+        @keyframes fade-in-child{
+            0%{opacity: 0;
+            visibility: visible;
+            }
+            100%{opacity: 1;
+            visibility: visible;
+            }
+        }
+
+        .fade-out-child{
+            background-color: black;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            animation: fade-out-child 0.66s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            position: absolute;
+        }
+
+        @keyframes fade-out-child{
+            0%{opacity: 1;
+                visibility: visible;
+            }
+            100%{opacity: 0;
+            visibility: hidden;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body class="main-wrapper">
+    <div class="interface">
+        <div style="position: relative;" id="characters">
+        </div>
+        <div class="substrate" id="substrate">
+            <h1 class="name" id="name">name</h1>
+            <p class="say" id="say">say</p>
+            <button class="nextButton" id="nextButton">▶</button>
+            <button class="nextButton" id="backButton" style="top: 90px;">◀</button>
+        </div>
+
+        <div class="choices" id="choices">
+        </div>
+
+        <div id="fades">
+        </div>
+
+        <div class="pauseMenu" id="pauseMenu">
+            <h1>Пауза</h1>
+            <button class="pauseButtons" onclick="animatePauseMenu()">Вернутся к игре</button>
+            <div class="sliderBlur">
+                <h2 style="font-size: 24px;">Размытие</h2>
+                <input type="range" min="0" max="50" value="25" id="slider">
+                <span id="blurValueText">50%</span>
+            </div>
+            <button class="pauseButtons" onclick="backToMenu()">В меню (без сохранения)</button>
+        </div>
+        <button class="full_screen">⛶</button>
+        <button class="pause" id="pauseButton" onclick="animatePauseMenu()">l l</button>
+    </div>
+</body>
+<script>
+    const btnflscr = document.querySelector(".full_screen")
+    const sliderBlur = document.getElementById("slider");
+    const sliderBlurTextValue = document.getElementById("blurValueText")
+    let sliderBlurValue = null
+    var pauseToggle = false
+    var permitHTML = true
+
+    const savedSliderBlur = localStorage.getItem("savedSliderBlurValue")
+    if(savedSliderBlur !== null){
+        const substrate = document.getElementById("substrate")
+        const pauseMenu = document.getElementById("pauseMenu")
+        sliderBlur.value = savedSliderBlur
+        sliderBlurValue = savedSliderBlur
+        substrate.style.backdropFilter = `blur(${sliderBlurValue/5}px)`
+        pauseMenu.style.backdropFilter = `blur(${sliderBlurValue/5}px)`
+        sliderBlurTextValue.textContent = `${sliderBlurValue*2}%`
+    }
+    else{
+        sliderBlur.value = 25
+        sliderBlurValue = 25
+    }
+
+    slider.addEventListener("input", (event)=>{
+        const currentValue = event.target.value
+        const substrate = document.getElementById("substrate")
+        const pauseMenu = document.getElementById("pauseMenu")
+
+        substrate.style.backdropFilter = `blur(${currentValue/5}px)`
+        pauseMenu.style.backdropFilter = `blur(${currentValue/5}px)`
+        sliderBlurTextValue.textContent = `${currentValue*2}%`
+        localStorage.setItem("savedSliderBlurValue", currentValue)
+    })
+
+    btnflscr.addEventListener("click", async () => {
+    try {
+        if (!document.fullscreenElement) {
+        await document.documentElement.requestFullscreen();
+        btnflscr.textContent = "◀";
+    } else {
+        await document.exitFullscreen();
+        btnflscr.textContent = "⛶";
+    }
+    } catch (error) {
+        console.log("Ошибка:", error);
+  }
+});
+
+function animatePauseMenu(){
+    if (pauseToggle == false){
+    const gameHud = document.getElementById("substrate")
+    const pauseMenu = document.getElementById("pauseMenu")
+    const pauseButton = document.getElementById("pauseButton")
+    if(permitHTML == true){
+        gameHud.classList.add("fade-out")
+        pauseMenu.classList.add("fade-in")
+        gameHud.classList.remove("fade-in")
+        pauseMenu.classList.remove("fade-out")
+        pauseMenu.classList.remove("fade-out-permit")
+    }
+    else{
+        pauseMenu.classList.add("fade-in-permit")
+        pauseMenu.classList.remove("fade-out-permit")
+        pauseMenu.classList.remove("fade-out")
+    }
+    pauseButton.textContent = "◀"
+    pauseToggle = true
+    }
+    else{
+    const gameHud = document.getElementById("substrate")
+    const pauseMenu = document.getElementById("pauseMenu")
+    const pauseButton = document.getElementById("pauseButton")
+    if(permitHTML == true){
+        gameHud.classList.add("fade-in")
+        gameHud.classList.remove("fade-out")
+        pauseMenu.classList.add("fade-out")
+        pauseMenu.classList.remove("fade-in")
+        pauseMenu.classList.remove("fade-in-permit")        
+    }
+    else{
+        pauseMenu.classList.add("fade-out-permit")
+        pauseMenu.classList.remove("fade-in-permit")
+        pauseMenu.classList.remove("fade-in")
+    }
+    pauseButton.textContent = "l l"
+    pauseToggle = false
+    }
+}
+
+function backToMenu(){
+    window.location.href = "index.html"
+}
+</script>
+
+</html>

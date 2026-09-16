@@ -1,0 +1,22 @@
+# VS Code
+.vscode/
+*.code-workspace
+
+
+# Mac OS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db 
+Desktop.ini
+
+# Временные файлы
+*.log 
+*.tmp 
+*.swp 
+.env
+
+# IDE
+.idea/ *.iml
