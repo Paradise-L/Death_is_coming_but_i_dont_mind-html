@@ -599,7 +599,7 @@
         "name_color": "purple",
         "say": "Отохвись уже от телефона!",
         "background": "none",
-        "sprite": "sprites/izolda_smile.png",
+        "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 100,
         "spriteX": 50,
         "spriteY": -50
@@ -611,7 +611,7 @@
         "name_color": "White",
         "say": "Мило прокартавила она, с улыбочкой на личике.",
         "background": "none",
-        "sprite": "sprites/izolda_smile.png",
+        "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 100,
         "spriteX": 50,
         "spriteY": -50
@@ -671,7 +671,7 @@
         "name_color": "purple",
         "say": "Пведставляешь, Клоди, снится мне, будто я улетела в дхугой гоход... Совехшенно одна, без денег! И телефончика нет! Я так паниковала!",
         "background": "none",
-        "sprite": "sprites/izolda_smile.png",
+        "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 100,
         "spriteX": 50,
         "spriteY": -50
@@ -683,7 +683,7 @@
         "name_color": "White",
         "say": "Мы шли, я слушал её рассказы и иногда похихикивал.",
         "background": "none",
-        "sprite": "sprites/izolda_smile.png",
+        "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 100,
         "spriteX": 50,
         "spriteY": -50
@@ -695,7 +695,7 @@
         "name_color": "White",
         "say": "Когда мы наконец дошли до магазина, она не удержалась и, отпустив мою руку, поспешила к платьям, а потом к футболкам, а потом к кофтам.",
         "background": "none",
-        "sprite": "sprites/izolda_smile.png",
+        "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 100,
         "spriteX": 50,
         "spriteY": -50
@@ -824,7 +824,7 @@
         "name_color": "purple",
         "say": "Вот, поэтому я решила, что больше не буду есть на ночь.",
         "background": "none",
-        "sprite": "sprites/izolda_smile.png",
+        "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 121,
         "spriteX": 50,
         "spriteY": -73
@@ -836,7 +836,7 @@
         "name_color": "purple",
         "say": "А ты что молчишь? Расскажи тоже что нибудь. Про учёбу расскажи, во!",
         "background": "none",
-        "sprite": "sprites/izolda_smile.png",
+        "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 121,
         "spriteX": 50,
         "spriteY": -73
@@ -848,7 +848,7 @@
         "name_color": "White",
         "say": "Я улыбнулся и недолго думая, начал рассказывать ей как недавно меня пытался завалить препод по вышмату, а я сумел элегантно выкрутиться.",
         "background": "none",
-        "sprite": "sprites/izolda_smile.png",
+        "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 121,
         "spriteX": 50,
         "spriteY": -73
@@ -860,7 +860,7 @@
         "name_color": "sandybrown",
         "say": "Кароче пришёл я на сессию, профессор Арнгольд уже вовсю улыбался.",
         "background": "none",
-        "sprite": "sprites/izolda_smile.png",
+        "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 121,
         "spriteX": 50,
         "spriteY": -73
@@ -872,7 +872,7 @@
         "name_color": "sandybrown",
         "say": "Слёту старик окрикивает меня и уже начинает бубнеть начало какой-то задачки, которая похоже приснилась ему этой ночью.",
         "background": "none",
-        "sprite": "sprites/izolda_smile.png",
+        "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 121,
         "spriteX": 50,
         "spriteY": -73
@@ -884,7 +884,7 @@
         "name_color": "sandybrown",
         "say": "Услышав лишь часть его слов, я всё равно понял про что идёт речь и уже начал искать логические противоречия и как можно обойти систему.",
         "background": "none",
-        "sprite": "sprites/izolda_smile.png",
+        "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 121,
         "spriteX": 50,
         "spriteY": -73
@@ -896,7 +896,7 @@
         "name_color": "sandybrown",
         "say": "В общем профессор сказал:",
         "background": "none",
-        "sprite": "sprites/izolda_smile.png",
+        "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 121,
         "spriteX": 50,
         "spriteY": -73
@@ -908,7 +908,7 @@
         "name_color": "sandybrown",
         "say": "-Ладно Клавдий, грузить задачками по матанализу я тебя не стану. Реши простенькую задачку на одну извилину, если решишь, так уж и быть поставлю зачёт.",
         "background": "none",
-        "sprite": "sprites/izolda_smile.png",
+        "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 121,
         "spriteX": 50,
         "spriteY": -73
@@ -920,7 +920,7 @@
         "name_color": "sandybrown",
         "say": "-Сколько человек в нашем городе имеют одинаковое количество волосинок? Тридцать секунд пошли!",
         "background": "none",
-        "sprite": "sprites/izolda_smile.png",
+        "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 121,
         "spriteX": 50,
         "spriteY": -73
@@ -932,7 +932,7 @@
         "name_color": "sandybrown",
         "say": "Он ещё более ехидно улыбнулся, но я-то тоже не пальцем деланный. Сразу же вспомнил как читал в интернете про «принцип Дирехле».",
         "background": "none",
-        "sprite": "sprites/izolda_smile.png",
+        "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 121,
         "spriteX": 50,
         "spriteY": -73
@@ -944,7 +944,7 @@
         "name_color": "sandybrown",
         "say": "И ответил ему - У человека на голове максимум 150 тысяч волосинок, население население города - пол миллиона.",
         "background": "none",
-        "sprite": "sprites/izolda_smile.png",
+        "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 121,
         "spriteX": 50,
         "spriteY": -73
@@ -956,7 +956,7 @@
         "name_color": "sandybrown",
         "say": "-Если максимальное количество волосинок на голове человека меньше, чем самих людей, то как минимум двое неизбежно окажутся с одинаковым количеством волосков.",
         "background": "none",
-        "sprite": "sprites/izolda_smile.png",
+        "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 121,
         "spriteX": 50,
         "spriteY": -73
@@ -968,7 +968,7 @@
         "name_color": "sandybrown",
         "say": "-Более того, с одинаковым количеством волосков могут попасться как минимум 4 человека!",
         "background": "none",
-        "sprite": "sprites/izolda_smile.png",
+        "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 121,
         "spriteX": 50,
         "spriteY": -73
@@ -980,7 +980,7 @@
         "name_color": "sandybrown",
         "say": "-Мой окончательный ответ - минимум 4 целых хомосапиенса!",
         "background": "none",
-        "sprite": "sprites/izolda_smile.png",
+        "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 121,
         "spriteX": 50,
         "spriteY": -73
@@ -992,7 +992,7 @@
         "name_color": "sandybrown",
         "say": "Старик сначала сделал серьёзное лицо, подумал, но недолго рассуждая вернул лицу смелый вид будто «Я знал что ты сообразишь». После чего покашлял и сказал:",
         "background": "none",
-        "sprite": "sprites/izolda_smile.png",
+        "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 121,
         "spriteX": 50,
         "spriteY": -73
@@ -1004,7 +1004,7 @@
         "name_color": "sandybrown",
         "say": "-Ладно! Раскусил баян. Ладно жук, давай зачётку и гуляй Вася.",
         "background": "none",
-        "sprite": "sprites/izolda_smile.png",
+        "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 121,
         "spriteX": 50,
         "spriteY": -73
@@ -1052,7 +1052,7 @@
         "name_color": "White",
         "say": "Я вызвал такси ей и уже собирался вызвать себе как вдруг мне прилетело предложение:",
         "background": "none",
-        "sprite": "sprites/izolda_smile.png",
+        "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 115,
         "spriteX": 50,
         "spriteY": -68
@@ -1064,7 +1064,7 @@
         "name_color": "purple",
         "say": "Не хочешь заскочить ко мне на чай?",
         "background": "none",
-        "sprite": "sprites/izolda_smile.png",
+        "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 115,
         "spriteX": 50,
         "spriteY": -68
