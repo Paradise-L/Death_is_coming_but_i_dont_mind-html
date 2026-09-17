@@ -3,16 +3,42 @@
 
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <title>Death is coming, but I don't mind.</title>
     <style>
         html, body{
             overflow: hidden;
-            background: linear-gradient(to top, rgb(17, 17, 19),rgb(26, 26, 30));
-            background-repeat: no-repeat ;
-            background-attachment: fixed ;
             margin: 0;
             padding: 0;
             min-height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-color: rgb(10,15,25);
+        }
+
+        #screen-menu{
+            display: grid;
+            place-items: center;
+            width: 100%;
+            min-height: 100vh;
+            box-sizing: border-box;
+            background: linear-gradient(to top, rgb(17, 17, 19),rgb(26, 26, 30));
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        #screen-game{
+            display: grid;
+            place-items: center;
+            width: 100%;
+            min-height: 100vh;
+            box-sizing: border-box;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
 
         .main-wrapper{
@@ -32,7 +58,29 @@
             box-sizing: border-box;
         }
 
-        .menu-content {
+        /* Единая кнопка полноэкранного режима — вне сцен, всегда сверху */
+        .full_screen{
+            position: fixed;
+            top: 15px;
+            left: 15px;
+            z-index: 1000;
+            color: rgb(142, 142, 142);
+            font-size: 14px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: rgba(30, 30, 34, 0.33);
+            border-radius: 15.5px;
+            padding: 11px 15px;
+            border: 2px rgba(255, 255, 255, 0.3) solid;
+            cursor: pointer;
+            display: flex;
+        }
+        .full_screen:hover{
+            transform: scale(1.03);
+        }
+
+        /* ============ МЕНЮ (бывший index.html) ============ */
+
+        #screen-menu .menu-content {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -40,26 +88,11 @@
             gap: 20px;
         }
 
-        .full_screen{
-            color: rgb(123, 123, 142);
-            font-size: 18px;
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            background-color: rgb(26, 26, 28);
-            border-radius: 15.5px;
-            padding: 11px 17.5px;
-            border: 3px rgb(74, 74, 86) solid;
-            cursor: pointer;
-            top: -5px;
-            left: 20px;
-            display:flex;
-            position: absolute;
-            z-index: 999;
-        }
-        img{
+        #screen-menu img{
             display: block;
-            margin: -75px auto -75px auto;
+            margin: -7vh auto -75px auto;
         }
-        button{
+        #screen-menu button{
             color: rgb(255, 255, 255);
             font-size: 23px;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -71,17 +104,16 @@
             display: block;
             margin: 33px auto;
         }
-        p{
+        #screen-menu p{
             color: rgb(85, 85, 100);
             font-size: 12px;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
             position: fixed;
             bottom: -10px;
-            left: 50%;
             transform: translateX(-50%);
         }
 
-        h2{
+        #screen-menu h2{
             color: white;
             font-size: 18px;
             font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -89,10 +121,10 @@
             text-align: center;
         }
 
-        button:hover{
+        #screen-menu button:hover{
             transform: scale(1.02);
         }
-        .startMenu.slide-down{
+        #screen-menu .startMenu.slide-down{
             animation: smoothStretchAndShot 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
         }
 
@@ -107,13 +139,13 @@
         filter: blur(3px);
       }
     }
-    .aboutTheGame{
+    #screen-menu .aboutTheGame{
         opacity: 0;
         margin: -325px auto -320px auto;
         visibility: hidden;
     }
 
-    .aboutTheGame.slider-up{
+    #screen-menu .aboutTheGame.slider-up{
         animation: smoothAboutTheGame 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
     }
 
@@ -132,7 +164,7 @@
     }
     }
 
-    .startMenu.slide-up{
+    #screen-menu .startMenu.slide-up{
         animation: smoothStretchAndShotBack 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
     }
 
@@ -149,7 +181,7 @@
       }
     }
 
-    .aboutTheGame.slider-down{
+    #screen-menu .aboutTheGame.slider-down{
         animation: smoothAboutTheGameBack 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
     }
 
@@ -168,7 +200,7 @@
     }
     }
 
-    .choiceChapter{
+    #screen-menu .choiceChapter{
         display: flex;
         opacity: 0;
         gap: 20px;
@@ -178,19 +210,19 @@
         align-items: center;
     }
 
-    .choiceChapter h2{
+    #screen-menu .choiceChapter h2{
         margin: -20px;
     }
 
-    .buttonsRow{
+    #screen-menu .buttonsRow{
         display: flex;
         flex-direction: row;
         gap: 10px;
         justify-content: center;
-        margin: 0 auto -50px auto
+        margin: 0 auto -50px auto;
     }
 
-    .choiceChapter.slider-up{
+    #screen-menu .choiceChapter.slider-up{
         animation: smoothChoiceChapter 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
     }
 
@@ -209,7 +241,7 @@
     }
     }
 
-    .choiceChapter.slider-down{
+    #screen-menu .choiceChapter.slider-down{
         animation: smoothChoiceChapterBack 0.6s cubic-bezier(0.25, 1, 0.5, 1) forwards;
     }
 
@@ -228,7 +260,7 @@
     }
     }
 
-    .choiceChapterButton{
+    #screen-menu .choiceChapterButton{
     display: inline-block;
     font-size: 25px;
     padding: 12px 20px;
@@ -236,56 +268,983 @@
     margin: 25px 5px;
     }
 
+    /* ============ ИГРА (бывший game.html) ============ */
+
+    #screen-game button{
+            color: rgba(255, 255, 255, 75%);
+            font-size: 18px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: rgba(30, 30, 34, 0.75);
+            border-radius: 15.5px;
+            padding: 11px 15px;
+            border: 3px rgba(255, 255, 255, 75%) solid;
+            cursor: pointer;
+            display:flex;
+        }
+
+        #screen-game .pause{
+            font-size: 14px;
+            z-index: 998;
+            top: 15px;
+            right: 15px;
+            border: 2px rgba(255, 255, 255, 0.3) solid;
+            color: rgb(142, 142, 142);
+            background-color: rgba(30, 30, 34, 0.33);
+            position: absolute;
+        }
+
+        #screen-game button:hover{
+            transform: scale(1.03);
+        }
+
+        #screen-game .substrate{
+            background-color: rgba(20,20,20,50%);
+            width: 85%;
+            padding: 20px;
+            border-radius: 25px;
+            border: 3px rgba(255,255,255, 33%) solid;
+            position:fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            backdrop-filter: blur(5px);
+
+            justify-content: center;
+            text-align: center;
+            color:white;
+            font-size: 20px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            animation: substrateStart 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes substrateStart{
+            0%{
+                opacity: 0;
+                filter: blur(5px);
+            }
+            100%{
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+
+        #screen-game .name{
+            font-size: 26px;
+        }
+
+        #screen-game .say{
+            position:static;
+        }
+
+        #screen-game .pauseMenu{
+            visibility: hidden;
+            background-color: rgba(0,0,0,40%);
+            width: 85%;
+            height: 85%;
+            padding: 20px;
+            border-radius: 25px;
+            border: 3px rgba(255,255,255, 35%) solid;
+            position:fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            backdrop-filter: blur(5px);
+
+            justify-content: center;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        #screen-game .pauseButtons{
+            color: white;
+            position: static;
+            margin: 30px auto;
+            border-color: white;
+            background-color: rgba(30, 30, 34, 0.33);
+            width: auto;
+        }
+
+        #screen-game .substrate.fade-out{
+            animation: subFadeOut 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes subFadeOut{
+            0%{
+                opacity: 1;
+                filter: blur(0);
+                width: 85%;
+            }
+            100%{
+                opacity: 0;
+                filter: blur(3px);
+                visibility: hidden;
+                width: 25%;
+            }
+        }
+
+        #screen-game .pauseMenu.fade-in{
+            animation: pauseMenuFadeIn 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes pauseMenuFadeIn{
+            0%{
+                visibility: visible;
+                opacity: 0;
+                filter: blur(3px);
+                height: 10%;
+                width: 85%;
+            }
+            100%{
+                opacity: 1;
+                filter: blur(0);
+                visibility: visible;
+                height: 85%;
+                width: 25%;
+            }
+        }
+
+        #screen-game .substrate.fade-in{
+            animation: subFadeIn 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes subFadeIn{
+            0%{
+                opacity: 0;
+                filter: blur(3px);
+                visibility: visible;
+                width: 25%;
+            }
+            100%{
+                opacity: 1;
+                filter: blur(0);
+                visibility: visible;
+                width: 85%;
+            }
+        }
+
+        #screen-game .pauseMenu.fade-out{
+            animation: pauseMenuFadeOut 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes pauseMenuFadeOut{
+            0%{
+                opacity: 1;
+                filter: blur(0);
+                height: 85%;
+                visibility: visible;
+                width: 25%;
+            }
+            100%{
+                opacity: 0;
+                filter: blur(3px);
+                visibility: hidden;
+                height: 10%;
+                width: 85%;
+            }
+        }
+
+        #screen-game .pauseMenu.fade-in-permit{
+            animation: pauseMenuFadeInPermit 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes pauseMenuFadeInPermit{
+            0%{
+                opacity: 0;
+                filter: blur(3px);
+                height: 10%;
+                visibility: visible;
+                width: 2%;
+            }
+            100%{
+                opacity: 1;
+                filter: blur(0);
+                visibility: visible;
+                height: 85%;
+                width: 25%;
+            }
+        }
+
+        #screen-game .pauseMenu.fade-out-permit{
+            animation: pauseMenuFadeOutPermit 0.5s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes pauseMenuFadeOutPermit{
+            0%{
+                opacity: 1;
+                filter: blur(0);
+                height: 85%;
+                visibility: visible;
+                width: 25%;
+            }
+            100%{
+                opacity: 0;
+                filter: blur(3px);
+                visibility: hidden;
+                height: 10%;
+                width: 2%;
+            }
+        }
+
+        #screen-game .sliderBlur{
+            align-items: center;
+            gap: 10px;
+        }
+
+        #screen-game .nextButton{
+            font-size: 22px;
+            border: 3px rgba(255,255,255, 33%) solid;
+            color: rgba(255,255,255, 33%);
+            background-color: rgba(20,20,20,50%);
+            z-index: 997;
+            backdrop-filter: blur(5px);
+        }
+
+        #screen-game .nextButtonsWrapper{
+            position: absolute;
+            bottom: 0;
+            right: -75px;
+    
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        #screen-game .choices{
+            visibility: hidden;
+            width: 85%;
+            height: 85%;
+            padding: 20px;
+            border-radius: 25px;
+            position:fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            justify-content: center;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        #screen-game .choices.fade-in{
+            animation: choicesFade-in 0.66s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes choicesFade-in{
+            0%{
+                opacity: 0;
+                filter: blur(3px);
+                height: 10%;
+                width: 85%;
+                transform: scale(0.8, 0.1);
+            }
+            100%{
+                opacity: 1;
+                filter: blur(0);
+                height: 85%;
+                width: 25%;
+                transform: scale(1, 1);
+                transform: translateX(-50%);
+            }
+        }
+
+        #screen-game .choiceButton{
+            color: white;
+            position: static;
+            margin: 30px auto;
+            border: 4px white solid;
+            width: auto;
+            font-size: 36px;        
+        }
+
+        #screen-game .choices.fade-out{
+            animation: choicesFade-out 0.66s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes choicesFade-out{
+            0%{
+                opacity: 1;
+                filter: blur(0);
+                height: 85%;
+                width: 25%;
+                transform: scale(1, 1);
+                transform: translateX(-50%);
+            }
+            100%{
+                opacity: 0;
+                filter: blur(3px);
+                height: 10%;
+                width: 85%;
+                transform: scale(0.6, 0.1);
+                visibility: hidden;
+            }
+        }
+
+        #screen-game .fade-in-child{
+            background-color: black;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            animation: fade-in-child 0.66s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            position: absolute;
+        }
+
+        @keyframes fade-in-child{
+            0%{opacity: 0;
+            visibility: visible;
+            }
+            100%{opacity: 1;
+            visibility: visible;
+            }
+        }
+
+        #screen-game .fade-out-child{
+            background-color: black;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            animation: fade-out-child 0.66s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            position: absolute;
+        }
+
+        @keyframes fade-out-child{
+            0%{opacity: 1;
+                visibility: visible;
+            }
+            100%{opacity: 0;
+            visibility: hidden;
+            }
+        }
+
+        #screen-game .click_area{
+            width: 100%;
+            height: 100dvh;
+            cursor: auto;
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+
+        /* =========================================================
+           АДАПТИВ: десктоп сохраняет исходный силуэт, мобильный —
+           аккуратно перестраивается. Landscape предпочтителен,
+           но portrait тоже остаётся рабочим.
+           ========================================================= */
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        button {
+            -webkit-tap-highlight-color: transparent;
+            touch-action: manipulation;
+        }
+
+        @media (max-width: 700px) {
+            html, body {
+                width: 100%;
+                min-height: 100%;
+                min-height: 100dvh;
+                overflow: hidden;
+            }
+
+            .main-wrapper,
+            #screen-menu,
+            #screen-game {
+                width: 100%;
+                min-height: 100dvh;
+                height: 100dvh;
+            }
+
+            .interface {
+                width: 100%;
+                max-width: none;
+                height: 100%;
+                padding:
+                    max(10px, env(safe-area-inset-top))
+                    max(10px, env(safe-area-inset-right))
+                    max(10px, env(safe-area-inset-bottom))
+                    max(10px, env(safe-area-inset-left));
+            }
+
+            .full_screen {
+                top: max(10px, env(safe-area-inset-top));
+                left: max(10px, env(safe-area-inset-left));
+                padding: 9px 12px;
+                font-size: 13px;
+                border-width: 2px;
+                border-radius: 13px;
+            }
+
+            /* ---------- МЕНЮ ---------- */
+
+            #screen-menu .menu-content {
+                width: 100%;
+                min-height: 100%;
+                gap: 8px;
+                justify-content: center;
+                overflow: hidden;
+            }
+
+            #screen-menu .startMenu,
+            #screen-menu .aboutTheGame,
+            #screen-menu .choiceChapter {
+                width: min(92vw, 680px);
+            }
+
+            #screen-menu img {
+                width: min(78vw, 650px);
+                max-height: 34dvh;
+                height: auto;
+                object-fit: contain;
+                margin: -45dvh auto -2dvh auto;
+            }
+
+            #screen-menu button {
+                display: inline;
+                width: auto;
+                padding: 12px 20px;
+                font-size: clamp(17px, 3.8vw, 23px);
+                border-width: 3px;
+                border-radius: 14px;
+            }
+
+            #screen-menu h2 {
+                margin: 8px 0;
+                font-size: clamp(13px, 2.7vw, 18px);
+                line-height: 1.45;
+            }
+
+            #screen-menu .aboutTheGame {
+                margin: -200px auto 33px auto;
+                padding: 10px;
+            }
+
+            #screen-menu .aboutTheGame h2 {
+                max-width: 90vw;
+            }
+
+            #screen-menu .choiceChapter {
+                margin: -300px auto;
+                gap: 10px;
+            }
+
+            #screen-menu .choiceChapter h2 {
+                margin: 0 0 4px;
+            }
+
+            #screen-menu .buttonsRow {
+                width: auto;
+                gap: 8px;
+                margin: 0 auto 8px;
+            }
+
+            #screen-menu .choiceChapterButton {
+                width: auto;
+                min-width: 54px;
+                min-height: 48px;
+                margin: 5px 2px;
+                padding: 8px 16px;
+                font-size: clamp(19px, 4vw, 25px);
+            }
+
+            #screen-menu p {
+                bottom: max(2px, env(safe-area-inset-bottom));
+                font-size: 10px;
+            }
+
+            #screen-menu p:last-of-type {
+                left: auto;
+                right: max(8px, env(safe-area-inset-right));
+                transform: none;
+            }
+
+            /* На узком экране анимации больше не уезжают за viewport.
+               Сохраняем направление и скорость, меняем только дистанцию. */
+            @keyframes smoothStretchAndShot {
+                0% { transform: translateX(0); opacity: 1; filter: blur(0); }
+                100% { transform: translateX(-48vw); opacity: .5; filter: blur(3px); }
+            }
+
+            @keyframes smoothStretchAndShotBack {
+                0% { transform: translateX(-48vw); opacity: .5; filter: blur(3px); }
+                100% { transform: translateX(0); opacity: 1; filter: blur(0); }
+            }
+
+            @keyframes smoothAboutTheGame {
+                0% { visibility: visible; transform: translateX(100vw); opacity: 0; filter: blur(3px); }
+                100% { transform: translateX(0); opacity: 1; filter: blur(0); visibility: visible; }
+            }
+
+            @keyframes smoothAboutTheGameBack {
+                0% { visibility: visible; transform: translateX(0); opacity: 1; filter: blur(0); }
+                100% { transform: translateX(100vw); opacity: 0; filter: blur(3px); visibility: hidden; }
+            }
+
+            @keyframes smoothChoiceChapter {
+                0% { visibility: visible; transform: translateX(100vw); opacity: 0; filter: blur(3px); }
+                100% { transform: translateX(0); opacity: 1; filter: blur(0); visibility: visible; }
+            }
+
+            @keyframes smoothChoiceChapterBack {
+                0% { visibility: visible; transform: translateX(0); opacity: 1; filter: blur(0); }
+                100% { transform: translateX(100vw); opacity: 0; filter: blur(3px); visibility: hidden; }
+            }
+
+            /* ---------- ИГРА ---------- */
+
+            #screen-game .interface {
+                position: relative;
+            }
+
+            #screen-game button {
+                min-width: 44px;
+                min-height: 44px;
+                padding: 9px 12px;
+                font-size: clamp(15px, 3.5vw, 18px);
+                border-width: 2px;
+                border-radius: 13px;
+            }
+
+            #screen-game .pause {
+                top: max(10px, env(safe-area-inset-top));
+                right: max(10px, env(safe-area-inset-right));
+                font-size: 13px;
+                z-index: 1001;
+            }
+
+            #screen-game .substrate {
+                width: calc(100% - 24px);
+                max-width: 1100px;
+                min-height: 92px;
+                padding: 12px 58px 12px 14px;
+                bottom: max(10px, env(safe-area-inset-bottom));
+                border-width: 2px;
+                border-radius: 18px;
+                font-size: clamp(14px, 3.3vw, 20px);
+                line-height: 1.35;
+                overflow: hidden;
+            }
+
+            #screen-game .name {
+                margin: 0 0 4px;
+                font-size: clamp(18px, 4.5vw, 26px);
+                line-height: 1.15;
+            }
+
+            #screen-game .say {
+                margin: 0;
+                max-height: 24dvh;
+                overflow: hidden;
+            }
+
+            #screen-game .nextButtonsWrapper {
+                right: -4px;
+                bottom: -4px;
+                gap: 6px;
+                transform: translateX(100%);
+            }
+
+            #screen-game .nextButton {
+                min-width: 42px;
+                min-height: 42px;
+                padding: 7px 9px;
+                font-size: 18px;
+            }
+
+            #screen-game .nextButtonsWrapper #backButton {
+                top: auto !important;
+            }
+
+            #screen-game .choices {
+                width: min(88%, 700px);
+                height: auto;
+                max-height: calc(100dvh - 40px);
+                padding: 16px;
+                bottom: 20px;
+                border-radius: 20px;
+                font-size: clamp(15px, 3.5vw, 20px);
+                overflow: auto;
+            }
+
+            #screen-game .choiceButton {
+                width: min(100%, 560px);
+                min-height: 50px;
+                margin: 10px auto;
+                padding: 10px 14px;
+                font-size: clamp(19px, 5vw, 32px);
+                line-height: 1.15;
+            }
+
+            #screen-game .pauseMenu {
+                width: min(88%, 700px);
+                height: auto;
+                max-height: calc(100dvh - 32px);
+                min-height: 55%;
+                bottom: 16px;
+                padding: 18px;
+                border-radius: 20px;
+                overflow: auto;
+                font-size: clamp(15px, 3.5vw, 20px);
+            }
+
+            #screen-game .pauseMenu h1 {
+                margin: 4px 0 14px;
+                font-size: clamp(24px, 6vw, 36px);
+            }
+
+            #screen-game .pauseButtons {
+                width: min(100%, 420px);
+                margin: 12px auto;
+            }
+
+            #screen-game .sliderBlur {
+                width: min(100%, 520px);
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                margin: 10px auto;
+            }
+
+            #screen-game .sliderBlur h2 {
+                width: 100%;
+                margin: 5px 0 8px;
+            }
+
+            #screen-game .sliderBlur input[type="range"] {
+                width: min(80vw, 360px);
+                min-height: 28px;
+            }
+
+            #screen-game .click_area {
+                width: 100%;
+                height: 100dvh;
+            }
+
+            /* Адаптируем финальные состояния анимаций:
+               на телефоне панели становятся широкими, а не 25% экрана. */
+            @keyframes pauseMenuFadeIn {
+                0% { visibility: visible; opacity: 0; filter: blur(3px); height: 10%; width: 88%; }
+                100% { opacity: 1; filter: blur(0); visibility: visible; height: auto; width: min(88%, 700px); }
+            }
+
+            @keyframes pauseMenuFadeOut {
+                0% { opacity: 1; filter: blur(0); height: auto; visibility: visible; width: min(88%, 700px); }
+                100% { opacity: 0; filter: blur(3px); height: 10%; visibility: hidden; width: 88%; }
+            }
+
+            @keyframes pauseMenuFadeInPermit {
+                0% { opacity: 0; filter: blur(3px); height: 10%; visibility: visible; width: 2%; }
+                100% { opacity: 1; filter: blur(0); visibility: visible; height: auto; width: min(88%, 700px); }
+            }
+
+            @keyframes pauseMenuFadeOutPermit {
+                0% { opacity: 1; filter: blur(0); height: auto; visibility: visible; width: min(88%, 700px); }
+                100% { opacity: 0; filter: blur(3px); height: 10%; visibility: hidden; width: 2%; }
+            }
+
+            @keyframes choicesFade-in {
+                0% {
+                    opacity: 0; filter: blur(3px); height: 10%; width: 88%;
+                    transform: translateX(-50%) scale(.8, .1);
+                }
+                100% {
+                    opacity: 1; filter: blur(0); height: auto;
+                    width: min(88%, 700px); transform: translateX(-50%) scale(1, 1);
+                }
+            }
+
+            @keyframes choicesFade-out {
+                0% {
+                    opacity: 1; filter: blur(0); height: auto;
+                    width: min(88%, 700px); transform: translateX(-50%) scale(1, 1);
+                }
+                100% {
+                    opacity: 0; filter: blur(3px); height: 10%; width: 88%;
+                    transform: translateX(-50%) scale(.6, .1); visibility: hidden;
+                }
+            }
+        }
+
+        /* Узкий portrait: чуть уменьшаем элементы, но не ломаем игру. */
+        @media (max-width: 700px) and (orientation: portrait) {
+            #screen-menu img {
+                max-height: 27dvh;
+            }
+
+            #screen-menu .startMenu {
+                transform-origin: center;
+            }
+
+            #screen-menu button {
+                width: min(78vw, 340px);
+                min-height: 46px;
+                margin: 6px auto;
+            }
+
+            #screen-game .substrate {
+                min-height: 112px;
+                padding-right: 52px;
+                overflow: hidden;
+            }
+
+            #screen-game .say {
+                max-height: 18dvh;
+            }
+
+            #screen-game .nextButtonsWrapper {
+                right: 2px;
+                transform: translateX(100%);
+            }
+        }
+
+        /* Landscape — основной мобильный режим для визуальной новеллы. */
+        @media (max-width: 900px) and (orientation: landscape) {
+            #screen-menu img {
+                width: min(58vw, 560px);
+                max-height: 48dvh;
+                margin-bottom: -1dvh;
+                margin-top: -25dvh;
+            }
+
+            #screen-menu .startMenu {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #screen-menu button {
+                min-height: 42px;
+                margin: 8px auto;
+                padding: 10px 18px;
+                font-size: 22px;
+            }
+
+            #screen-menu h2 {
+                font-size: clamp(12px, 2.4vw, 17px);
+                line-height: 1.3;
+            }
+
+            #screen-game .substrate {
+                width: min(88%, 1100px);
+                min-height: 78px;
+                padding: 10px 56px 10px 14px;
+                overflow: hidden;
+            }
+
+            #screen-game .name {
+                font-size: clamp(17px, 3vw, 24px);
+            }
+
+            #screen-game .say {
+                max-height: 16dvh;
+            }
+
+            #screen-game .pauseMenu {
+                max-height: calc(100dvh - 24px);
+                min-height: 70%;
+            }
+
+            #screen-game .choices {
+                max-height: calc(100dvh - 24px);
+                bottom: 12px;
+            }
+        }
+
+        /* Очень маленькие телефоны. */
+        @media (max-width: 380px) {
+            #screen-menu button {
+                font-size: 18px;
+                min-height: 44px;
+            }
+
+            #screen-game .substrate {
+                width: calc(100% - 16px);
+                bottom: 8px;
+                padding: 10px 50px 10px 12px;
+                overflow: hidden;
+            }
+
+            #screen-game .nextButtonsWrapper {
+                right: -50px;
+            }
+        }
+
     </style>
 </head>
 
 <body class="main-wrapper">
-    <p>© Paradise-L</p>
-    <p style="left: 98%">2026</p>
 
-    <div class="interface">
-    <button class="full_screen">⛶</button>
-        <div class = menu-content>
-        <div class="startMenu" id="menu">
-            <img src="./sprites/IMG_6148.png" alt="Death is coming, but i don't mind" width="700px">
-            <button onclick="startGame()">Новая игра</button>
-            <button onclick="animateChoiceChapter()">Выбор главы</button>
-            <button onclick="animateATG()">Об игре</button>
-        </div>
+    <!-- ===================== ЭКРАН МЕНЮ (бывший index.html) ===================== -->
+    <div id="screen-menu">
+        <p style="left: 50%;">© Paradise-L</p>
+        <p style="right: 0">2026</p>
 
-        <div class="aboutTheGame" id="ATG">
-            <h2>Визуальная новелла про очень приятную смерть,<br>в чулках, мини-юбке, а может, и без неё...<br><br>Управление с помощью кнопок 
-                на экране, а также:<br> следующий кадр - пробел или Enter или стрелочка вправо, <br> прошлый кадр - стрелочка влево</h2> 
-            <h2>Игра создана в 2026 году</h2>
-            <button onclick="animateMenu()">Назад</button>
-        </div>
+        <div class="interface">
+            <div class = menu-content id="menu-content">
+                <div class="startMenu" id="menu">
+                    <img src="./sprites/IMG_6148.png" alt="Death is coming, but i don't mind" width="650px">
+                    <button onclick="startGame()">Новая игра</button>
+                    <button onclick="animateChoiceChapter()">Выбор главы</button>
+                    <button onclick="animateATG()">Об игре</button>
+                </div>
 
-        <div class="choiceChapter" id="cC">
-            <h2>Выберите главу пожалуйста</h2>
-            <div class="buttonsRow">
-                <button class="choiceChapterButton">1</button>
-                <button class="choiceChapterButton">2</button>
-                <button class="choiceChapterButton">3</button>
+                <div class="aboutTheGame" id="ATG">
+                    <h2>Визуальная новелла про очень приятную смерть,<br>в чулках, мини-юбке, а может, и без неё...<br><br>Управление с помощью
+                    кнопок на экране, а также:<br> следующий кадр - пробел или Enter или стрелочка вправо, <br> прошлый кадр - стрелочка влево</h2> 
+                    <h2>Игра создана в 2026 году</h2>
+                    <button onclick="animateMenu()">Назад</button>
+                </div>
+
+                <div class="choiceChapter" id="cC">
+                    <h2>Выберите главу пожалуйста</h2>
+                    <div class="buttonsRow">
+                        <button class="choiceChapterButton">1</button>
+                        <button class="choiceChapterButton">2</button>
+                        <button class="choiceChapterButton">3</button>
+                    </div>
+                    <button onclick="animateMenuCC()">Назад</button>
+                </div>
             </div>
-        <button onclick="animateMenuCC()">Назад</button>
+            <div class="load" id="loading">
+                <h2>Загрузка ресурсов...</h2>
+                <h2 id="progressBarLoad">0/0</h2>
+                <button onclick="startMenu()" style="font-size: 16px;">Пропустить</button>
+            </div>
+        </div>
     </div>
+
+    <!-- ===================== ЭКРАН ИГРЫ (бывший game.html) ===================== -->
+    <div id="screen-game" style="display:none;">
+        <div class="interface">
+            <div style="position: relative;" id="characters">
+            </div>
+            <div class="click_area_div">
+                <button class="click_area" id="area_click1"></button>
+            </div>
+            <div class="substrate" id="substrate">
+                <h1 class="name" id="name">name</h1>
+                <p class="say" id="say">say</p>
+                <button class="click_area" id="area_click2"></button>
+                <div class="nextButtonsWrapper">
+                    <button class="nextButton" id="nextButton">▶</button>
+                    <button class="nextButton" id="backButton" style="top: 90px">◀</button>
+                </div>
+            </div>
+            
+
+            <div class="choices" id="choices">
+            </div>
+
+            <div style="pointer-events: none" id="fades">
+            </div>
+
+            <div class="pauseMenu" id="pauseMenu">
+                <h1>Пауза</h1>
+                <button class="pauseButtons" onclick="animatePauseMenu()">Вернутся к игре</button>
+                <div class="sliderBlur">
+                    <h2 style="font-size: 24px;">Размытие</h2>
+                    <input type="range" min="0" max="50" value="25" id="slider">
+                    <span id="blurValueText">50%</span>
+                </div>
+                <button class="pauseButtons" onclick="backToMenu()">В меню (без сохранения)</button>
+            </div>
+            <button class="pause" id="pauseButton" onclick="animatePauseMenu()">l l</button>
+        </div>
     </div>
-    </div>
+
+    <!-- Единая кнопка на весь сайт, не зависит от текущей сцены -->
+    <button class="full_screen" id="fullscreenBtn">⛶</button>
+
 </body>
 
 <script>
-const btnflscr = document.querySelector(".full_screen")
+/* ===================== ПЕРЕМЕННЫЕ МЕНЮ (бывший index.html) ===================== */
+
 let firstTap0 = true
 let firstTap1 = true
+let menu_on = true
+const choiceChapter = document.getElementById("cC")
+const ATG = document.getElementById("ATG")
+const menu = document.getElementById("menu")
+const loading = document.getElementById("loading")
+const menu_content = document.getElementById("menu-content")
+const progressBarLoad = document.getElementById("progressBarLoad")
 
-btnflscr.addEventListener("click", async () => {
+
+/* ===================== ПЕРЕМЕННЫЕ ИГРЫ (бывший game.html) ===================== */
+
+const substrate = document.getElementById("substrate")
+const pauseMenu = document.getElementById("pauseMenu")
+const pauseButton = document.getElementById("pauseButton")
+var pauseToggle = false
+var permitHTML = true
+
+/* ===================== ЗАГРУЗКА ===================== */
+
+const images = {
+    black_screen: "./bg/black_screen.jpg",
+    home_fire: "./bg/home_fire.jpg",
+    home_morning: "./bg/home_morning.jpg",
+    logo: "./sprites/IMG_6148.png",
+    Izolda_smile: "./sprites/Izolda_smile.png",
+    Izolda_closed_eyes: "./sprites/Izolda_closed_eyes.png",
+    Izolda_sad: "./sprites/Izolda_sad.png",
+    Smert_hood: "./sprites/Smert_hood.png",
+    Smert_coat: "./sprites/Smert_coat.png",
+    Smert_defualt: "./sprites/Smert_defualt.png",
+}
+
+menu_content.style.display = "none"
+loading.style.display = "grid"
+
+let loaded = 0
+const total = Object.keys(images).length
+progressBarLoad.textContent = `${loaded}/${total}`
+
+// Предзагружаешь
+const imageCache = {}
+for (let key in images) {
+    const img = new Image()
+    img.src = images[key]
+    img.onload = () => {
+        loaded++
+        progressBarLoad.textContent = `${loaded}/${total}`
+        console.log(`Загружено ${loaded}/${total}`)
+        if (loaded === total) startMenu() // Начать игру когда всё готово
+    }
+    imageCache[key] = img
+}
+
+function startMenu() {
+    menu_content.style.display = "flex"
+    loading.style.display = "none"
+}
+
+/* ===================== МЕНЮ (бывший index.html) ===================== */
+
+// Единая кнопка полного экрана — общая на весь сайт
+const fullscreenBtn = document.getElementById("fullscreenBtn")
+fullscreenBtn.addEventListener("click", async () => {
   try {
     if (!document.fullscreenElement) {
       await document.documentElement.requestFullscreen();
-      btnflscr.textContent = "◀";
+      fullscreenBtn.textContent = "◀";
     } else {
       await document.exitFullscreen();
-      btnflscr.textContent = "⛶";
+      fullscreenBtn.textContent = "⛶";
     }
   } catch (error) {
     console.log("Ошибка:", error);
@@ -293,60 +1252,144 @@ btnflscr.addEventListener("click", async () => {
 });
 
 function animateATG(){
-    const menu = document.getElementById("menu")
-    const ATG = document.getElementById("ATG")
     menu.classList.add("slide-down")
     ATG.classList.add("slider-up")
     menu.classList.remove('slide-up')
     ATG.classList.remove('slider-down')
     if (firstTap0 == false){
-        const choiceChapter = document.getElementById("cC")
         choiceChapter.classList.add("slider-down")
         choiceChapter.classList.remove("slider-up")
     }
     firstTap0 = true
     firstTap1 = false
+    menu_on = false
 }
 
 function animateMenu(){
-    const menu = document.getElementById("menu")
-    const ATG = document.getElementById("ATG")
     menu.classList.add("slide-up")
     ATG.classList.add("slider-down")
     menu.classList.remove('slide-down')
     ATG.classList.remove('slider-up')
     firstTap0 = true
+    menu_on = true
 }
 
 function animateMenuCC(){
-    const menu = document.getElementById("menu")
-    const choiceChapter = document.getElementById("cC")
     menu.classList.add("slide-up")
     choiceChapter.classList.add("slider-down")
     menu.classList.remove('slide-down')
     choiceChapter.classList.remove("slider-up")
     firstTap1 = true
+    menu_on = true
 }
 
 function animateChoiceChapter(){
-    const menu = document.getElementById("menu")
-    const choiceChapter = document.getElementById("cC")
     menu.classList.add("slide-down")
     choiceChapter.classList.add("slider-up")
     menu.classList.remove('slide-up')
     choiceChapter.classList.remove("slider-down")
     if (firstTap1 == false){
-        const ATG = document.getElementById("ATG")
         ATG.classList.add("slider-down")
         ATG.classList.remove('slider-up')
     }
     firstTap1 = true
     firstTap0 = false
+    menu_on = false
 }
 
-function startGame(){
-    window.location.href = "game.html"
+let gameModule = null
+
+async function startGame(){
+    document.getElementById("screen-menu").style.display = "none"
+    document.getElementById("screen-game").style.display = "grid"
+    substrate.className = "substrate"
+    pauseMenu.className = "pauseMenu"
+    pauseToggle = false
+    permitHTML = true
+    pauseButton.textContent = "l l"
+
+    // script.js загружается и выполняется только один раз за всё время
+    // жизни страницы (значит, и слушатели событий вешаются один раз).
+    // При повторных заходах просто вызываем initGame() из уже
+    // загруженного модуля — он сбрасывает состояние и рисует первый кадр.
+    if (!gameModule){
+        gameModule = await import("./script.js")
+    }
+    gameModule.initGame()
 }
 
+/* ===================== ИГРА (бывший game.html) ===================== */
+
+const sliderBlur = document.getElementById("slider");
+const sliderBlurTextValue = document.getElementById("blurValueText")
+let sliderBlurValue = null
+
+const savedSliderBlur = localStorage.getItem("savedSliderBlurValue")
+if(savedSliderBlur !== null){
+    sliderBlur.value = savedSliderBlur
+    sliderBlurValue = savedSliderBlur
+    substrate.style.backdropFilter = `blur(${sliderBlurValue/5}px)`
+    pauseMenu.style.backdropFilter = `blur(${sliderBlurValue/5}px)`
+    sliderBlurTextValue.textContent = `${sliderBlurValue*2}%`
+}
+else{
+    sliderBlur.value = 25
+    sliderBlurValue = 25
+}
+
+sliderBlur.addEventListener("input", (event)=>{
+    const currentValue = event.target.value
+
+    substrate.style.backdropFilter = `blur(${currentValue/5}px)`
+    pauseMenu.style.backdropFilter = `blur(${currentValue/5}px)`
+    sliderBlurTextValue.textContent = `${currentValue*2}%`
+    localStorage.setItem("savedSliderBlurValue", currentValue)
+})
+
+function animatePauseMenu(){
+    if (pauseToggle == false){
+    if(permitHTML == true){
+        substrate.classList.add("fade-out")
+        pauseMenu.classList.add("fade-in")
+        substrate.classList.remove("fade-in")
+        pauseMenu.classList.remove("fade-out")
+        pauseMenu.classList.remove("fade-out-permit")
+    }
+    else{
+        pauseMenu.classList.add("fade-in-permit")
+        pauseMenu.classList.remove("fade-out-permit")
+        pauseMenu.classList.remove("fade-out")
+    }
+    pauseButton.textContent = "◀"
+    pauseToggle = true
+    }
+    else{
+    if(permitHTML == true){
+        substrate.classList.add("fade-in")
+        substrate.classList.remove("fade-out")
+        pauseMenu.classList.add("fade-out")
+        pauseMenu.classList.remove("fade-in")
+        pauseMenu.classList.remove("fade-in-permit")        
+    }
+    else{
+        pauseMenu.classList.add("fade-out-permit")
+        pauseMenu.classList.remove("fade-in-permit")
+        pauseMenu.classList.remove("fade-in")
+    }
+    pauseButton.textContent = "l l"
+    pauseToggle = false
+    }
+}
+
+function backToMenu(){
+    document.getElementById("screen-game").style.display = "none"
+    document.getElementById("screen-menu").style.display = "grid"
+    menu.className = "startMenu"
+    choiceChapter.className = "choiceChapter"
+    ATG.className = "aboutTheGame"
+    firstTap0 = true
+    firstTap1 = true
+    menu_on = true
+}
 </script>
 </html>

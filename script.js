@@ -6,6 +6,8 @@ const container = document.getElementById("characters")
 const substrateObj = document.getElementById("substrate")
 const choices = document.getElementById("choices")
 const fades = document.getElementById("fades")
+const area_click1 = document.getElementById("area_click1")
+const area_click2 = document.getElementById("area_click2")
 const body = document.body
 const dialogues = await fetch("./dialogues.json")
 const storyData = await dialogues.json()
@@ -25,6 +27,8 @@ const love_points = {
 let love_points_history = {0: {...love_points}}
 //love points
 
+// ============= NEW FRAME (шаг на следующий или предыдущий слайд, отвечает за текст и логику) ============= //
+
 function newFrame(n){
         if (permit == true && pauseToggle == false){
             step += n
@@ -39,7 +43,7 @@ function newFrame(n){
 
         currentLine = storyData.chapter_1_scene_1[step]
         if (currentLine.background != "none"){
-            body.style.backgroundImage = body.style.backgroundImage = currentLine.background
+            body.style.backgroundImage = currentLine.background
         }
         if(currentLine.type == "диалог" || currentLine.type == "fade-out"){
             if(currentLine.name !="none"){
@@ -83,6 +87,29 @@ function newFrame(n){
     }
 }
 
+// ============= STEP FRAME (шаг на следущий или предыдущий слайд, отвечает за спрайты) ============= //
+
+function stepSprite(){
+    if (pauseToggle == false)
+        if(permit == true && pauseToggle == false){
+            container.innerHTML = ""
+            if (currentLine.sprite != "none"){
+                const sprite = document.createElement("img")
+                container.appendChild(sprite)
+                sprite.src = currentLine.sprite
+                sprite.alt = "sprite"
+                sprite.style.width = `${currentLine.spriteSize*0.325}vh`
+                sprite.style.position = "fixed"
+                sprite.style.left = `${currentLine.spriteX}%`
+                sprite.style.bottom = `${currentLine.spriteY}%`
+                sprite.style.transform = "translateX(-50%)"
+                sprite.style.filter= `brightness(${currentLine.spriteBrightness/100})`
+        }
+    }
+}
+
+// ============= FADE IN и FADE OUT (отвечают за фейды с чёрным экраном) ============= //
+
 function fade_in(){
     fadeToggle = true
     fades.innerHTML = ""
@@ -107,24 +134,7 @@ function fade_out(){
     fade.classList.remove("fade-in-child")
 }
 
-function stepSprite(){
-    if (pauseToggle == false)
-        if(permit == true && pauseToggle == false){
-            container.innerHTML = ""
-            if (currentLine.sprite != "none"){
-                const sprite = document.createElement("img")
-                container.appendChild(sprite)
-                sprite.src = currentLine.sprite
-                sprite.alt = "sprite"
-                sprite.style.width = `${currentLine.spriteSize*0.325}vh`
-                sprite.style.position = "fixed"
-                sprite.style.left = `${currentLine.spriteX}%`
-                sprite.style.bottom = `${currentLine.spriteY}%`
-                sprite.style.transform = "translateX(-50%)"
-                sprite.style.filter= `brightness(${currentLine.spriteBrightness/100})`
-        }
-    }
-}
+// ============= NEW FRAME ============= //
 
 function choiceButtonFunc(event){
     option = `option_${event.currentTarget.id}_result`
@@ -138,43 +148,83 @@ function choiceButtonFunc(event){
     stepSprite()
 }
 
-body.style.backgroundImage = currentLine.background
-textName.textContent = currentLine.name
-textName.style.color = currentLine.name_color
-textSay.textContent = currentLine.say
-stepSprite()
+// ============= ОТВЕТСТВЕННЫЕ ЗА КНОПКИ ПЕРЕКЛЮЧЕНИЯ СЛАЙДОВ =============
+// Внимание: этот блок выполняется ОДИН РАЗ за всё время жизни страницы,
+// потому что index.html теперь импортирует script.js только один раз
+// (см. startGame() в index.html). Слушатели НЕ дублируются между
+// повторными запусками игры — за перезапуск состояния отвечает
+// функция initGame() ниже.
 
-    nextButton.addEventListener("click", async()=>{
-        fadeFrame = 1
-        newFrame(1)
-        stepSprite()
-    })
+function backFrame(){
+    if(permit == false && pauseToggle == false){
+        permit = true
+        permitHTML = true
+        substrateObj.classList.add("fade-in")
+        choices.classList.add("fade-out")
+    }
+    if(fadeToggle == true){
+        fade_out()
+    }
+    fadeFrame = -1
+    newFrame(-1)
+    stepSprite()
+}
 
-    backButton.addEventListener("click", async()=>{
-        fadeFrame = -1
-        newFrame(-1)
-        stepSprite()
-    })
+nextButton.addEventListener("click", async()=>{
+    fadeFrame = 1
+    newFrame(1)
+    stepSprite()
+})
+
+backButton.addEventListener("click", async()=>{
+    backFrame()
+})
+
+area_click1.addEventListener("click", async()=>{
+    fadeFrame = 1
+    newFrame(1)
+    stepSprite()
+})
+
+area_click2.addEventListener("click", async()=>{
+    fadeFrame = 1
+    newFrame(1)
+    stepSprite()
+})
+
+// ============= ОТВЕТСТВЕННЫЕ ЗА КЛАВИШИ ПЕРЕКЛЮЧЕНИЯ СЛАЙДОВ ============= //
     
-    window.addEventListener("keydown", function(event){
-        if (event.code === 'Space' || event.code === 'Enter' || event.code === 'ArrowRight') {
+window.addEventListener("keydown", function(event){
+    if (event.code === 'Space' || event.code === 'Enter' || event.code === 'ArrowRight') {
         event.preventDefault();
         fadeFrame = 1
         newFrame(1)
         stepSprite()
-        }
-        else if(event.code === 'ArrowLeft'){
-            if(permit == false && pauseToggle == false){
-                permit = true
-                permitHTML = true
-                substrateObj.classList.add("fade-in")
-                choices.classList.add("fade-out")
-            }
-            if(fadeToggle == true){
-                fade_out()
-            }
-            fadeFrame = -1
-            newFrame(-1)
-            stepSprite()
-        }
-    })
+    }
+    else if(event.code === 'ArrowLeft'){
+        backFrame()
+    }
+})
+
+// ============= ИНИЦИАЛИЗАЦИЯ / ПЕРЕЗАПУСК ИГРЫ ============= //
+
+export function initGame(){
+    step = 0
+    permit = true
+    fadeToggle = false
+    fadeFrame = 1
+    love_points.none = 0
+    love_points.sb = 0
+    love_points_history = {0: {...love_points}}
+
+    choices.innerHTML = ""
+    choices.style.visibility = "hidden"
+    fades.innerHTML = ""
+
+    currentLine = storyData.chapter_1_scene_1[0]
+    body.style.backgroundImage = currentLine.background
+    textName.textContent = currentLine.name
+    textName.style.color = currentLine.name_color
+    textSay.textContent = currentLine.say
+    stepSprite()
+}
