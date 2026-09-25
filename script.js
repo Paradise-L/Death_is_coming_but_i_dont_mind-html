@@ -8,21 +8,28 @@ const choices = document.getElementById("choices")
 const fades = document.getElementById("fades")
 const area_click1 = document.getElementById("area_click1")
 const area_click2 = document.getElementById("area_click2")
+const hideShow = document.getElementById("hideShow") 
+const objForHide = document.getElementById("objForHide")
+const objForHide2 = document.getElementById("objForHide2")
+const objForHide3 = document.getElementById("objForHide3") 
 const body = document.body
 const dialogues = await fetch("./dialogues.json")
+let branch = "chapter_1_scene_1"
 const storyData = await dialogues.json()
-let currentLine = storyData.chapter_1_scene_1[0]
+let currentLine = storyData[branch][0]
 let step = 0
 let permit = true
 let option = 0
 let option_value = 0
 let fadeToggle = false
 let fadeFrame = 1
+let hideToggle = false
 
 //love points
 const love_points = {
     none: 0,
-    sb: 0
+    budil: 0,
+    jump: null
 }
 let love_points_history = {0: {...love_points}}
 //love points
@@ -30,18 +37,18 @@ let love_points_history = {0: {...love_points}}
 // ============= NEW FRAME (шаг на следующий или предыдущий слайд, отвечает за текст и логику) ============= //
 
 function newFrame(n){
-        if (permit == true && pauseToggle == false){
+        if (permit && !pauseToggle && !hideToggle){
             step += n
             if (step < 0){
                 step = 0
             }
 
-        if(n<0 && love_points_history[step]){
+        if(love_points_history[step]){
             love_points.none = love_points_history[step].none
-            love_points.sb = love_points_history[step].sb
+            love_points.budil = love_points_history[step].budil
         }
 
-        currentLine = storyData.chapter_1_scene_1[step]
+        currentLine = storyData[branch][step]
         if (currentLine.background != "none"){
             body.style.backgroundImage = currentLine.background
         }
@@ -84,13 +91,26 @@ function newFrame(n){
         if(currentLine.type == "fade-out"){
             fade_out()
         }
+        if (currentLine.jump && n==1){
+            branch = currentLine.jump
+            step=-1
+        }
+        if(currentLine.change){
+            if(currentLine.changeOperation == "+"){
+            love_points[currentLine.change] += Number([currentLine.changeValue])
+            }
+            else{
+                love_points[currentLine.change] = Number([currentLine.changeValue])
+            }
+            love_points_history[step] = {...love_points}
+        }
     }
 }
 
 // ============= STEP FRAME (шаг на следущий или предыдущий слайд, отвечает за спрайты) ============= //
 
 function stepSprite(){
-    if (pauseToggle == false)
+    if (!pauseToggle && !hideToggle)
         if(permit == true && pauseToggle == false){
             container.innerHTML = ""
             if (currentLine.sprite != "none"){
@@ -98,7 +118,7 @@ function stepSprite(){
                 container.appendChild(sprite)
                 sprite.src = currentLine.sprite
                 sprite.alt = "sprite"
-                sprite.style.width = `${currentLine.spriteSize*0.325}vh`
+                sprite.style.width = `${currentLine.spriteSize*0.3}vh`
                 sprite.style.position = "fixed"
                 sprite.style.left = `${currentLine.spriteX}%`
                 sprite.style.bottom = `${currentLine.spriteY}%`
@@ -143,9 +163,17 @@ function choiceButtonFunc(event){
     choices.classList.add("fade-out")
     permit = true
     permitHTML = true
-    love_points[currentLine[option]] += Number([currentLine[option_value]])
+    if(currentLine[option] != "jump"){
+        love_points[currentLine[option]] += Number([currentLine[option_value]])
+    }
+    else{
+        branch = currentLine[option_value]
+        currentLine = storyData[branch][0]
+        step=-1
+    }
     newFrame(1)
     stepSprite()
+    love_points.jump = null
 }
 
 // ============= ОТВЕТСТВЕННЫЕ ЗА КНОПКИ ПЕРЕКЛЮЧЕНИЯ СЛАЙДОВ =============
@@ -156,7 +184,7 @@ function choiceButtonFunc(event){
 // функция initGame() ниже.
 
 function backFrame(){
-    if(permit == false && pauseToggle == false){
+    if(!permit && !pauseToggle && !hideToggle){
         permit = true
         permitHTML = true
         substrateObj.classList.add("fade-in")
@@ -165,10 +193,35 @@ function backFrame(){
     if(fadeToggle == true){
         fade_out()
     }
+    if(currentLine.jumpBack){
+        branch = currentLine.jumpBack
+        step=currentLine.jumpBackLen + 1
+    }
+    if(currentLine.jumpBackExtra){
+        branch = currentLine[`jumpBackExtra${[love_points[currentLine.jumpBackExtra]]}`]
+        step = currentLine[`jumpBackLenExtra${[love_points[currentLine.jumpBackExtra]]}`] + 1
+    }
     fadeFrame = -1
     newFrame(-1)
     stepSprite()
 }
+
+hideShow.addEventListener("click", async()=>{
+    if (!hideToggle){ 
+        hideShow.style.opacity = "33%"
+        objForHide.style.opacity = 0
+        objForHide3.style.opacity = 0 
+        objForHide2.style.opacity = 0 
+        hideToggle = true
+    }
+    else{
+        hideShow.style.opacity = "100%"
+        objForHide.style.opacity = 1
+        objForHide3.style.opacity = 1 
+        objForHide2.style.opacity = 1 
+        hideToggle = false
+    }
+})
 
 nextButton.addEventListener("click", async()=>{
     fadeFrame = 1
@@ -214,14 +267,14 @@ export function initGame(){
     fadeToggle = false
     fadeFrame = 1
     love_points.none = 0
-    love_points.sb = 0
+    love_points.budil = 0
     love_points_history = {0: {...love_points}}
 
     choices.innerHTML = ""
     choices.style.visibility = "hidden"
     fades.innerHTML = ""
-
-    currentLine = storyData.chapter_1_scene_1[0]
+    branch = "chapter_1_scene_1"
+    currentLine = storyData[branch][0]
     body.style.backgroundImage = currentLine.background
     textName.textContent = currentLine.name
     textName.style.color = currentLine.name_color

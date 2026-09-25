@@ -517,7 +517,7 @@
         "name": "Мысли",
         "name_color": "White",
         "say": "До места встречи я добрался с ветерком, шустро, и уселся на лавочку ждать свою красавицу.",
-        "background": "none",
+        "background": "url('bg/mall.jpg')",
         "sprite": "none"
         },
         {
@@ -534,7 +534,7 @@
         "type": "диалог",
         "name": "Мысли",
         "name_color": "White",
-        "say": "Там же, в чате с моими друзьями, шло бурное обсуждение какой-то темы, связанной со спортом.",
+        "say": "В одном чате какую-то тему мне пытался рассказать мой друг-задротыш Марсель. В другом же чате, с моими друзьями, шло бурное обсуждение какой-то темы, связанной со спортом.",
         "background": "none",
         "sprite": "none"
         },
@@ -942,19 +942,7 @@
         "type": "диалог",
         "name": "Клавдий",
         "name_color": "sandybrown",
-        "say": "И ответил ему - У человека на голове максимум 150 тысяч волосинок, население население города - пол миллиона.",
-        "background": "none",
-        "sprite": "sprites/Izolda_smile.png",
-        "spriteSize": 121,
-        "spriteX": 50,
-        "spriteY": -73
-        },
-        {
-        "id": 98,
-        "type": "диалог",
-        "name": "Клавдий",
-        "name_color": "sandybrown",
-        "say": "-Если максимальное количество волосинок на голове человека меньше, чем самих людей, то как минимум двое неизбежно окажутся с одинаковым количеством волосков.",
+        "say": "И ответил ему - У человека на голове максимум 150 тысяч волосинок, население города - пол миллиона.",
         "background": "none",
         "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 121,
@@ -966,7 +954,7 @@
         "type": "диалог",
         "name": "Клавдий",
         "name_color": "sandybrown",
-        "say": "-Более того, с одинаковым количеством волосков могут попасться как минимум 4 человека!",
+        "say": "-Если максимальное количество волосинок на голове человека меньше, чем самих людей, то как минимум двое неизбежно окажутся с одинаковым количеством волосков.",
         "background": "none",
         "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 121,
@@ -978,7 +966,7 @@
         "type": "диалог",
         "name": "Клавдий",
         "name_color": "sandybrown",
-        "say": "-Мой окончательный ответ - минимум 4 целых хомосапиенса!",
+        "say": "-Более того, с одинаковым количеством волосков могут попасться как минимум 4 человека!",
         "background": "none",
         "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 121,
@@ -990,7 +978,7 @@
         "type": "диалог",
         "name": "Клавдий",
         "name_color": "sandybrown",
-        "say": "Старик сначала сделал серьёзное лицо, подумал, но недолго рассуждая вернул лицу смелый вид будто «Я знал что ты сообразишь». После чего покашлял и сказал:",
+        "say": "-Мой окончательный ответ - минимум 4 целых хомосапиенса!",
         "background": "none",
         "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 121,
@@ -1002,7 +990,7 @@
         "type": "диалог",
         "name": "Клавдий",
         "name_color": "sandybrown",
-        "say": "-Ладно! Раскусил баян. Ладно жук, давай зачётку и гуляй Вася.",
+        "say": "Старик сначала сделал серьёзное лицо, подумал, но недолго рассуждая вернул лицу смелый вид будто «Я знал что ты сообразишь». После чего покашлял и сказал:",
         "background": "none",
         "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 121,
@@ -1011,6 +999,18 @@
         },
         {
         "id": 103,
+        "type": "диалог",
+        "name": "Клавдий",
+        "name_color": "sandybrown",
+        "say": "-Ладно! Раскусил баян. Ладно жук, давай зачётку и гуляй Вася.",
+        "background": "none",
+        "sprite": "sprites/Izolda_smile.png",
+        "spriteSize": 121,
+        "spriteX": 50,
+        "spriteY": -73
+        },
+        {
+        "id": 104,
         "type": "диалог",
         "name": "Изольда",
         "name_color": "purple",
@@ -1022,20 +1022,8 @@
         "spriteY": -73
         },
         {
-        "id": 104,
-        "type": "диалог",
-        "name": "Мысли",
-        "name_color": "White",
-        "say": "Она чмокнула меня в щёку и мы хихикнули.",
-        "background": "none",
-        "sprite": "sprites/Izolda_closed_eyes.png",
-        "spriteSize": 121,
-        "spriteX": 50,
-        "spriteY": -73
-        },
-        {
         "id": 105,
-        "type": "fade-in",
+        "type": "диалог",
         "name": "Мысли",
         "name_color": "White",
         "say": "Она чмокнула меня в щёку и мы хихикнули.",
@@ -1047,10 +1035,22 @@
         },
         {
         "id": 106,
+        "type": "fade-in",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Она чмокнула меня в щёку и мы хихикнули.",
+        "background": "none",
+        "sprite": "sprites/Izolda_closed_eyes.png",
+        "spriteSize": 121,
+        "spriteX": 50,
+        "spriteY": -73
+        },
+        {
+        "id": 107,
         "type": "fade-out",
         "name": "Мысли",
         "name_color": "White",
-        "say": "Я вызвал такси ей и уже собирался вызвать себе как вдруг мне прилетело предложение:",
+        "say": "Я вызвал такси ей и уже собирался вызвать себе, как вдруг мне прилетело предложение:",
         "background": "none",
         "sprite": "sprites/Izolda_smile.png",
         "spriteSize": 115,
@@ -1058,8 +1058,8 @@
         "spriteY": -68
         },
         {
-        "id": 107,
-        "type": "fade-out",
+        "id": 108,
+        "type": "диалог",
         "name": "Изольда",
         "name_color": "purple",
         "say": "Не хочешь заскочить ко мне на чай?",
@@ -1070,21 +1070,986 @@
         "spriteY": -68
         },
         {
+        "id": 109,
+        "type": "диалог",
+        "name": "Изольда",
+        "name_color": "purple",
+        "say": "Посидим, поболтаем, посмеёмся!",
+        "background": "none",
+        "sprite": "sprites/Izolda_closed_eyes.png",
+        "spriteSize": 115,
+        "spriteX": 50,
+        "spriteY": -68
+        },
+        {
+        "id": 110,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Я сразу же начал глупо улыбаться как маленький ребёнок.",
+        "background": "none",
+        "sprite": "sprites/Izolda_closed_eyes.png",
+        "spriteSize": 115,
+        "spriteX": 50,
+        "spriteY": -68
+        },
+        {
+        "id": 111,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Но долго думать не стал.",
+        "background": "none",
+        "sprite": "sprites/Izolda_closed_eyes.png",
+        "spriteSize": 115,
+        "spriteX": 50,
+        "spriteY": -68
+        },
+        {
+        "id": 112,
+        "type": "диалог",
+        "name": "Клавдий",
+        "name_color": "sandybrown",
+        "say": "Кто я такой, чтобы отказываться от такого приятного предложения?",
+        "background": "none",
+        "sprite": "sprites/Izolda_smile.png",
+        "spriteSize": 115,
+        "spriteX": 50,
+        "spriteY": -68
+        },
+        {
+        "id": 113,
+        "type": "диалог",
+        "name": "Клавдий",
+        "name_color": "sandybrown",
+        "say": "Я в деле!",
+        "background": "none",
+        "sprite": "sprites/Izolda_smile.png",
+        "spriteSize": 115,
+        "spriteX": 50,
+        "spriteY": -68
+        },        
+        {
+        "id": 114,
+        "type": "диалог",
+        "name": "Изольда",
+        "name_color": "purple",
+        "say": "Чудненько!",
+        "background": "none",
+        "sprite": "sprites/Izolda_smile.png",
+        "spriteSize": 115,
+        "spriteX": 50,
+        "spriteY": -68
+        },
+        {
+        "id": 115,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "И немного погодя, загрузив в багажник все свои покупки, мы сели в такси.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 116,
+        "type": "fade-in",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "И немного погодя, загрузив в багажник все свои покупки, мы сели в такси.",
+        "background": "url('bg/mall.jpg')",
+        "sprite": "none"
+        },
+        {
+        "id": 117,
+        "type": "fade-out",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "По пути я с Изольдой смотрели в окно и любовались видами.",
+        "background": "url('bg/in_car.jpg')",
+        "sprite": "none"
+        },
+        {
+        "id": 118,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Я только успел включить телефон, как вдруг вспомнил об одной вещи.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 119,
+        "type": "диалог",
+        "name": "Клавдий",
+        "name_color": "sandybrown",
+        "say": "Интересно однако таки получается.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 120,
+        "type": "диалог",
+        "name": "Клавдий",
+        "name_color": "sandybrown",
+        "say": "Нас в финансовом университете уже третий год учили инвестициям, диверсификации портфеля, управлением рисками.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 121,
+        "type": "диалог",
+        "name": "Клавдий",
+        "name_color": "sandybrown",
+        "say": "Но нигде, ни в одном учебнике не написано, что делать, если ты в одну прекрасную субботу проснулся с хорошим запасом денег в кармане, а потом по щелчку пальцев — бац! — и к середине дня у тебя осталось денег только на обратную дорогу.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 122,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Изольда в тот же миг показалась мне растерянной, похоже, она почувствовала себя виноватой.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 123,
+        "type": "диалог",
+        "name": "Изольда",
+        "name_color": "purple",
+        "say": "Блин Клоди, ты что пхавда-пхавда потхатил последние деньги?",
+        "background": "none",
+        "sprite": "sprites/Izolda_sad.png",
+        "spriteSize": 115,
+        "spriteX": 22,
+        "spriteY": -68,
+        "spriteBrightness": 83
+        },
+        {
+        "id": 124,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Она надула губу и продолжила говорить с жалостным личиком.",
+        "background": "none",
+        "sprite": "sprites/Izolda_sad.png",
+        "spriteSize": 115,
+        "spriteX": 22,
+        "spriteY": -68,
+        "spriteBrightness": 83
+        },
+        {
+        "id": 125,
+        "type": "диалог",
+        "name": "Изольда",
+        "name_color": "purple",
+        "say": "Чтож ты делать то тепехь будешь, без денег?",
+        "background": "none",
+        "sprite": "sprites/Izolda_sad.png",
+        "spriteSize": 115,
+        "spriteX": 22,
+        "spriteY": -68,
+        "spriteBrightness": 83
+        },
+        {
+        "id": 126,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "И я, зная, что всё под полным контролем и точно найду деньги до стипендии, сказал ей:",
+        "background": "none",
+        "sprite": "sprites/Izolda_sad.png",
+        "spriteSize": 115,
+        "spriteX": 22,
+        "spriteY": -68,
+        "spriteBrightness": 83
+        },
+        {
+        "id": 127,
+        "type": "диалог",
+        "name": "Клавдий",
+        "name_color": "sandybrown",
+        "say": "Да ладно тебе, не раскисай! Я будущий инвестиционный банкир, думаешь, не найду, где достать денег до следующей стипендии?",
+        "background": "none",
+        "sprite": "sprites/Izolda_sad.png",
+        "spriteSize": 115,
+        "spriteX": 22,
+        "spriteY": -68,
+        "spriteBrightness": 83
+        },
+        {
+        "id": 128,
+        "type": "диалог",
+        "name": "Клавдий",
+        "name_color": "sandybrown",
+        "say": "Брось!",
+        "background": "none",
+        "sprite": "sprites/Izolda_sad.png",
+        "spriteSize": 115,
+        "spriteX": 22,
+        "spriteY": -68,
+        "spriteBrightness": 83
+        },
+        {
+        "id": 129,
+        "type": "диалог",
+        "name": "Клавдий",
+        "name_color": "sandybrown",
+        "say": "Я всю эту финансовую демагогию развёл только ради одного: предупредить тебя заранее. Всю следующую неделю я буду чертовски занят — придётся плотно поработать над парой проектов.",
+        "background": "none",
+        "sprite": "sprites/Izolda_sad.png",
+        "spriteSize": 115,
+        "spriteX": 22,
+        "spriteY": -68,
+        "spriteBrightness": 83
+        },
+        {
+        "id": 130,
+        "type": "диалог",
+        "name": "Клавдий",
+        "name_color": "sandybrown",
+        "say": "Так что, мадемуазель, не скучай и не теряй меня, я буду чуть-чуть меньше уделять тебе внимания. Но это временные инвестиции!",
+        "background": "none",
+        "sprite": "sprites/Izolda_sad.png",
+        "spriteSize": 115,
+        "spriteX": 22,
+        "spriteY": -68,
+        "spriteBrightness": 83
+        },
+        {
+        "id": 131,
+        "type": "диалог",
+        "name": "Клавдий",
+        "name_color": "sandybrown",
+        "say": "Зато потом я куплю тебе хоть сто таких же сногсшибательных платьев.",
+        "background": "none",
+        "sprite": "sprites/Izolda_sad.png",
+        "spriteSize": 115,
+        "spriteX": 22,
+        "spriteY": -68,
+        "spriteBrightness": 83
+        },
+        {
+        "id": 132,
+        "type": "диалог",
+        "name": "Клавдий",
+        "name_color": "sandybrown",
+        "say": "Так что сегодняшняя вылазка точно была не зря. Я безумно рад, что ты счастлива, а я смог приложить к этому свою экспертную руку.",
+        "background": "none",
+        "sprite": "sprites/Izolda_sad.png",
+        "spriteSize": 115,
+        "spriteX": 22,
+        "spriteY": -68,
+        "spriteBrightness": 83
+        },
+        {
+        "id": 133,
+        "type": "диалог",
+        "name": "Изольда",
+        "name_color": "purple",
+        "say": "Какой ты у меня всё-таки умный и ховошенький!",
+        "background": "none",
+        "sprite": "sprites/Izolda_smile.png",
+        "spriteSize": 115,
+        "spriteX": 22,
+        "spriteY": -68,
+        "spriteBrightness": 83
+        },
+        {
+        "id": 134,
+        "type": "диалог",
+        "name": "Изольда",
+        "name_color": "purple",
+        "say": "Буду снетерпением ждать тебя... ну и сто платьев, конечно! Куда же я без них.",
+        "background": "none",
+        "sprite": "sprites/Izolda_smile.png",
+        "spriteSize": 115,
+        "spriteX": 22,
+        "spriteY": -68,
+        "spriteBrightness": 83
+        },
+        {
+        "id": 135,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Она хихикнула, а я, приобнимая её за плечи, уже начал размышлять над своим проектом.",
+        "background": "none",
+        "sprite": "sprites/Izolda_closed_eyes.png",
+        "spriteSize": 115,
+        "spriteX": 22,
+        "spriteY": -68,
+        "spriteBrightness": 83
+        },
+        {
+        "id": 136,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Суть такова: у меня есть друг Марсель, и, как выяснилось, он ещё с самого утра пытался втянуть меня в одну авантюру, обещавшую вкуснейший пассивный доход.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 137,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Вот уж действительно — всем бы таких друзей!",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 138,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Лежишь себе вальяжно на диване, а цифры на счету сами собой приятно умножаются.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 139,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "От меня, по сути, требовался минимум вложений: сдать в краткосрочную аренду кладовку и выступать исправным поставщиком электроэнергии.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 140,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "В свою очередь, мой дорогой друг обязывался привезти свою майнинг-ферму, подключить её к сети, настроить пул.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 141,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Прошить видеокарты под оптимальный разгон и наладить удалённый мониторинг через смартфон.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 142,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Как он мне сообщил, этот гений инженерной мысли готов приехать со всеми своими «подружками» уже завтра утром.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 143,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Так что мне остаётся лишь освободить угол в кладовке да присмотреть подходящую розетку, готовую к нешуточным нагрузкам.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 144,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "...",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 145,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "И пока я мысленно просчитывал хешрейт, окупаемость киловатт-часа и потенциальный спред, я сам не заметил, как мы доехали до дома Изи.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 146,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Изольда уже успела выпорхнуть из машины и с легким укором смотрела на меня через открытую дверь.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 147,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Она одарила меня лукавым взглядом и, мило картавя, поторопила:",
+        "background": "none",
+        "sprite": "sprites/Izolda_smile.png",
+        "spriteSize": 102,
+        "spriteX": 16.5,
+        "spriteY": -50,
+        "spriteBrightness": 83
+        },
+        {
+        "id": 148,
+        "type": "диалог",
+        "name": "Изольда",
+        "name_color": "purple",
+        "say": "Ну ты что там, уснул? Пошли ко мне быствее!",
+        "background": "none",
+        "sprite": "sprites/Izolda_closed_eyes.png",
+        "spriteSize": 102,
+        "spriteX": 16.5,
+        "spriteY": -50,
+        "spriteBrightness": 83
+        },
+        {
+        "id": 149,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Вынырнув из раздумий в реальность, я в срочном порядке потянулся к дверной ручке, расплатился и поблагодарил водителя за поездку, после чего выбрался из уютного салона такси.",
+        "background": "none",
+        "sprite": "sprites/Izolda_closed_eyes.png",
+        "spriteSize": 102,
+        "spriteX": 16.5,
+        "spriteY": -50,
+        "spriteBrightness": 83
+        },
+        {
+        "id": 150,
+        "type": "fade-in",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Вынырнув из раздумий в реальность, я в срочном порядке потянулся к дверной ручке, расплатился и поблагодарил водителя за поездку, после чего выбрался из уютного салона такси.",
+        "background": "url('bg/in_car.jpg')",
+        "sprite": "sprites/Izolda_closed_eyes.png",
+        "spriteSize": 102,
+        "spriteX": 16.5,
+        "spriteY": -50,
+        "spriteBrightness": 83
+        },
+        {
+        "id": 151,
+        "type": "fade-out",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Только я шагнул через порог и даже не успел разуться, как Изольда уже интересуется из кухни:",
+        "background": "url('bg/Izolda_home.jpg')",
+        "sprite": "none"
+        },
+        {
+        "id": 152,
+        "type": "диалог",
+        "name": "Изольда",
+        "name_color": "purple",
+        "say": "Тебе чай с хомашкой, Ку Цяо, ягодный, чёхный с бехгамотом или вообще, может, латте?",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 153,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Честно говоря, после всех этих дел больше всего хотелось просто рухнуть на кровать и устроить себе тихий час.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 154,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Но отказаться от чаепития с такой милой девушкой — настоящее преступление!",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 155,
+        "type": "диалог",
+        "name": "Клавдий",
+        "name_color": "sandybrown",
+        "say": "Чёрный с бергамотом, пожалуй, это именно то, что мне сейчас нужно. С одной ложкой сахара. Спасибо!",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 156,
+        "type": "диалог",
+        "name": "Изольда",
+        "name_color": "purple",
+        "say": "Будет сделано!",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 157,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "После этого я прошёл на кухню, и между нами завязался невероятно увлекательный разговор обо всём на свете.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 158,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Мы начали с наблюдения за прохожими в окне, плавно перешли к обсуждению её впечатляющей чайной коллекции, а в итоге и вовсе углубились в темы о древнем мире и величественной красоте космоса.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 159,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Поболтали мы действительно на славу!",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 160,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Да так, что я и не заметил, как осушил уже вторую кружку, а наша беседа плавно сместилась в сторону спальни, где мы решили наконец немного прилечь и отдохнуть.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 161,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Лёжа на кровати, Изи продолжала с восторгом рассказывать мне о самых разных и невероятных вещах.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 162,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Я же слушал её лишь одним ухом, пока второе уже настроилось на радиоволну «Тихий час», и смотрел на неё одним глазом, в то время как второй транслировал телепередачу «Спокойная природа».",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 163,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "...",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 164,
+        "type": "fade-in",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "...",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 165,
+        "type": "fade-out",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "...",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 166,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Когда я проснулся, Изи лежала, прижавшись всем телом ко мне.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 167,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Я, сам того не осознавая, во время сна обнял её обеими руками за талию, и даже немного ниже.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 168,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Она, в свою очередь, положила свою ногу на меня и ехидно улыбалась сквозь сон",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 169,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Никогда прежде я не видел, чтобы кто-то спал настолько глубоко и забвенно — это был абсолютный сон.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 170,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Но стоит мне отвести взгляд от неё и посмотреть в сторону окна, как меня ошеломило осознание:",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 171,
+        "type": "диалог",
+        "name": "!МЫСЛИ!",
+        "name_color": "red",
+        "say": "За стеклом уже непроглядная тьма!",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 172,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Марсель будет ждать меня буквально через пару часов. Как я умудрился так крепко уснуть?",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 173,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Что сказать Изе? Я ведь даже не предупредил её, что у меня запланированы дела.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 174,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Вдобавок ко всему, ночью такси стоит значительно дороже, и моих оставшихся средств на поездку банально не хватит!",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 175,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "...",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 176,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Я даже не помню: в тот день я разбудил её и всё объяснил или попытался тихо смотаться?",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 177,
+        "type": "выбор",
+        "numberOfOptions": 2,
+        "option_1": "Аккуратно разбудил Изольду",
+        "option_2": "Тихо собрался и ушёл незамеченным.",
+        "option_1_result": "jump",
+        "option_2_result": "jump",
+        "option_1_result_value": "разбужу",
+        "option_2_result_value": "тихо уйду"
+        }
+    ],
+
+    "тихо уйду":[
+        {
         "id": 0,
         "type": "диалог",
         "name": "Мысли",
         "name_color": "White",
-        "say": "",
+        "say": "Действительно, в ту ночь я в кромешной тишине осторожно освободился из её объятий и поднялся с кровати.",
+        "background": "none",
+        "sprite": "none",
+        "jumpBack": "chapter_1_scene_1",
+        "jumpBackLen": 177,
+        "change": "budil",
+        "changeOperation": "=",
+        "changeValue": 0
+        },
+        {
+        "id": 1,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Нащупал в темноте носки, надел рубашку, взял с покрывала телефон и уже готов был бесшумно испариться, как вдруг заметил проблему, способную спутать все мои планы.",
         "background": "none",
         "sprite": "none"
+        },
+        {
+        "id": 2,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Изя лежала на самом краю и вот-вот готова была совершить роковой полет на пол!",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 3,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Какая досада!",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 4,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Придётся спасать.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 5,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Забив на режим маскировки, я в один прыжок очутился у кровати и наклонился.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 6,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "В эту же секунду она сделала финальный переворот.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 7,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Изя чуть не грохнулась на пол, издав испуганный писк и сдавленно дрыгнув ногами, но я успел подхватить её буквально в сантиметре от ламината.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 8,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Протерев глаза, она обнаружила меня — стоящего посреди темноты в одной рубашке и держащего её на руках.",
+        "background": "none",
+        "sprite": "sprites/Izolda_underwear_shok.png",
+        "spriteSize": 102,
+        "spriteX": 50,
+        "spriteY": -67,
+        "spriteBrightness": 77.5
+        },
+        {
+        "id": 9,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Удивление на её лице было просто неописуемым!",
+        "background": "none",
+        "sprite": "sprites/Izolda_underwear_shok.png",
+        "spriteSize": 102,
+        "spriteX": 50,
+        "spriteY": -67,
+        "spriteBrightness": 77.5
+        },
+        {
+        "id": 10,
+        "type": "диалог",
+        "name": "Изольда",
+        "name_color": "purple",
+        "say": "Мой ты гехой! Только вот почему не спишь? Да и хубашка застёгнутая на тебе как-то оказа...",
+        "background": "none",
+        "sprite": "sprites/Izolda_underwear_shok.png",
+        "spriteSize": 102,
+        "spriteX": 50,
+        "spriteY": -67,
+        "spriteBrightness": 77.5
+        },
+        {
+        "id": 11,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Не успев дать ей договорить, я поцеловал её в губы и попутно уложил обратно на тёплую постель.",
+        "background": "none",
+        "sprite": "sprites/Izolda_underwear_shok.png",
+        "spriteSize": 102,
+        "spriteX": 50,
+        "spriteY": -67,
+        "spriteBrightness": 77.5
+        },
+        {
+        "id": 12,
+        "type": "диалог",
+        "name": "Клавдий",
+        "name_color": "sandybrown",
+        "say": "Вот видишь, даже в разгар ночи я стою на страже твоей безопасности!",
+        "background": "none",
+        "sprite": "sprites/Izolda_underwear_shok.png",
+        "spriteSize": 102,
+        "spriteX": 50,
+        "spriteY": -75,
+        "spriteBrightness": 77.5
+        },
+        {
+        "id": 13,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Она на секунду улыбнулась, но тут же вернула на лицо выражение лёгкого недоумения, давая понять: одной шуточкой тут не отделаешься.",
+        "background": "none",
+        "sprite": "sprites/Izolda_underwear_smile.png",
+        "spriteSize": 102,
+        "spriteX": 50,
+        "spriteY": -75,
+        "spriteBrightness": 77.5
+        },
+        {
+        "id": 14,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Поэтому я рассказал всё как есть: про Марселя, проспанное время и про неудачный «побег».",
+        "background": "none",
+        "sprite": "sprites/Izolda_underwear_smile.png",
+        "spriteSize": 102,
+        "spriteX": 50,
+        "spriteY": -75,
+        "spriteBrightness": 77.5,
+        "jump": "Изольда отпустила на улицу"
         }
     ],
-    "chapter_2_scene1":[{
 
-    }
+    "разбужу":[
+        {
+        "id": 0,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Я её разбудил.",
+        "background": "none",
+        "sprite": "none",
+        "jumpBack": "chapter_1_scene_1",
+        "jumpBackLen": 177,
+        "change": "budil",
+        "changeOperation": "=",
+        "changeValue": 1
+        },
+        {
+        "id": 1,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Я её разбудил 2.",
+        "background": "none",
+        "sprite": "none",
+        "jump": "Изольда отпустила на улицу"
+        }
+    
     ],
-    "chapter_3_scene1":[{
 
-    }
+    "Изольда отпустила на улицу":[
+        {
+        "id": 0, 
+        "type": "диалог",
+        "name": "Изольда",
+        "name_color": "purple",
+        "say": "Ты сумасшедший, Клавдий…",
+        "background": "none",
+        "sprite": "sprites/Izolda_underwear_smirk.png",
+        "spriteSize": 102,
+        "spriteX": 50,
+        "spriteY": -75,
+        "spriteBrightness": 77.5,
+        "jumpBackExtra": "budil",
+        "jumpBackExtra0": "тихо уйду",
+        "jumpBackLenExtra0": 14,
+        "jumpBackExtra1": "разбужу",
+        "jumpBackLenExtra1": 1
+        },
+        {
+        "id": 1,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Изя ухмыльнулась и сонно-присонно потянулась обнять меня.",
+        "background": "none",
+        "sprite": "sprites/Izolda_underwear_smirk.png",
+        "spriteSize": 102,
+        "spriteX": 50,
+        "spriteY": -75,
+        "spriteBrightness": 77.5
+        },
+        {
+        "id": 2,
+        "type": "диалог",
+        "name": "Изольда",
+        "name_color": "purple",
+        "say": "Смотри не пхостудись, на улице холодно. Не забудь написать как до дома дойдёшь!",
+        "background": "none",
+        "sprite": "sprites/Izolda_underwear_smirk.png",
+        "spriteSize": 102,
+        "spriteX": 50,
+        "spriteY": -75,
+        "spriteBrightness": 77.5
+        },
+        {
+        "id": 3,
+        "type": "диалог",
+        "name": "Изольда",
+        "name_color": "purple",
+        "say": "Всё, можешь идти.",
+        "background": "none",
+        "sprite": "sprites/Izolda_underwear_smirk.png",
+        "spriteSize": 102,
+        "spriteX": 50,
+        "spriteY": -75,
+        "spriteBrightness": 77.5
+        },
+        {
+        "id": 4,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Она поцеловала меня в губы и я пошёл на улицу.",
+        "background": "none",
+        "sprite": "sprites/Izolda_underwear_smirk.png",
+        "spriteSize": 102,
+        "spriteX": 50,
+        "spriteY": -75,
+        "spriteBrightness": 77.5
+        }
     ]
 }
