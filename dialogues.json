@@ -1958,7 +1958,7 @@
         "type": "диалог",
         "name": "Мысли",
         "name_color": "White",
-        "say": "Я её разбудил.",
+        "say": "Я всё никак не мог принять решение.",
         "background": "none",
         "sprite": "none",
         "jumpBack": "chapter_1_scene_1",
@@ -1972,12 +1972,178 @@
         "type": "диалог",
         "name": "Мысли",
         "name_color": "White",
-        "say": "Я её разбудил 2.",
+        "say": "Уже хотелось смыться на цыпочках.",
         "background": "none",
-        "sprite": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 2,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Но всё таки я остановился на мысли:",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 3,
+        "type": "диалог",
+        "name": "Клавдий",
+        "name_color": "sandybrown",
+        "say": "Нет, так нельзя.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 4,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Я не стал вылезать из её объятий, немного пощекатал за спинку и произнёс шёпотом:",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 5,
+        "type": "диалог",
+        "name": "Клавдий",
+        "name_color": "sandybrown",
+        "say": "Изя...",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 6,
+        "type": "диалог",
+        "name": "Клавдий",
+        "name_color": "sandybrown",
+        "say": "Изь, проснись, милая.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 7,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Она потянулась за одеялом, дабы натянуть его повыше. Я же потянулся к её губам и нежно поцеловал.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 8,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "После этого она немедленно начала просыпаться, ответила лаской губ, а потом наполовину открыла глаза.",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 9,
+        "type": "диалог",
+        "name": "Изольда",
+        "name_color": "purple",
+        "say": "Клавдий? Ты чего это не спишь?",
+        "background": "none",
+        "sprite": "sprites/Izolda_underwear_shok.png",
+        "spriteSize": 102,
+        "spriteX": 50,
+        "spriteY": -75,
+        "spriteBrightness": 77.5
+        },
+        {
+        "id": 10,
+        "type": "диалог",
+        "name": "Клавдий",
+        "name_color": "sandybrown",
+        "say": "Я? Да я как раз таки спал...",
+        "background": "none",
+        "sprite": "sprites/Izolda_underwear_shok.png",
+        "spriteSize": 102,
+        "spriteX": 50,
+        "spriteY": -75,
+        "spriteBrightness": 77.5
+        },
+        {
+        "id": 11,
+        "type": "диалог",
+        "name": "Клавдий",
+        "name_color": "sandybrown",
+        "say": "Хотя не должен был сейчас этим заниматься.",
+        "background": "none",
+        "sprite": "sprites/Izolda_underwear_shok.png",
+        "spriteSize": 102,
+        "spriteX": 50,
+        "spriteY": -75,
+        "spriteBrightness": 77.5
+        },
+        {
+        "id": 12,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Она сделала ещё более удивлённое лицо.",
+        "background": "none",
+        "sprite": "sprites/Izolda_underwear_shok.png",
+        "spriteSize": 102,
+        "spriteX": 50,
+        "spriteY": -75,
+        "spriteBrightness": 77.5
+        },
+        {
+        "id": 13,
+        "type": "диалог",
+        "name": "Изольда",
+        "name_color": "purple",
+        "say": "Клоди... Я тебя совсем не понимаю... О чём ты?",
+        "background": "none",
+        "sprite": "sprites/Izolda_underwear_shok.png",
+        "spriteSize": 102,
+        "spriteX": 50,
+        "spriteY": -75,
+        "spriteBrightness": 77.5
+        },
+        {
+        "id": 14,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Я не стал долго мучать девушку вопросами и спустя пару секунд молчания ответил ей:",
+        "background": "none",
+        "sprite": "sprites/Izolda_underwear_shok.png",
+        "spriteSize": 102,
+        "spriteX": 50,
+        "spriteY": -75,
+        "spriteBrightness": 77.5
+        },
+        {
+        "id": 15,
+        "type": "диалог",
+        "name": "Клавдий",
+        "name_color": "sandybrown",
+        "say": "Прости соня, я совсем забыл тебе рассказать про свои планы на завтра, точнее уже на сегодня.",
+        "background": "none",
+        "sprite": "sprites/Izolda_underwear_shok.png",
+        "spriteSize": 102,
+        "spriteX": 50,
+        "spriteY": -75,
+        "spriteBrightness": 77.5
+        },
+        {
+        "id": 16,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Я аккуратно рассказал ей всё как есть. Она внимательно слушала, и мне даже сначала показалось, что она расстроилась, но после того как я поставил точку, она ухмыльнулась и сказала:",
+        "background": "none",
+        "sprite": "sprites/Izolda_underwear_shok.png",
+        "spriteSize": 102,
+        "spriteX": 50,
+        "spriteY": -75,
+        "spriteBrightness": 77.5,
         "jump": "Изольда отпустила на улицу"
         }
-    
     ],
 
     "Изольда отпустила на улицу":[
@@ -1997,7 +2163,7 @@
         "jumpBackExtra0": "тихо уйду",
         "jumpBackLenExtra0": 14,
         "jumpBackExtra1": "разбужу",
-        "jumpBackLenExtra1": 1
+        "jumpBackLenExtra1": 16
         },
         {
         "id": 1,
@@ -2050,6 +2216,37 @@
         "spriteX": 50,
         "spriteY": -75,
         "spriteBrightness": 77.5
+        },
+        {
+        "id": 5,
+        "type": "fade-in",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": "Она поцеловала меня в губы и я пошёл на улицу.",
+        "background": "none",
+        "sprite": "sprites/Izolda_underwear_smirk.png",
+        "spriteSize": 102,
+        "spriteX": 50,
+        "spriteY": -75,
+        "spriteBrightness": 77.5
+        },
+        {
+        "id": 6,
+        "type": "fade-out",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": ".",
+        "background": "none",
+        "sprite": "none"
+        },
+        {
+        "id": 0,
+        "type": "диалог",
+        "name": "Мысли",
+        "name_color": "White",
+        "say": ".",
+        "background": "none",
+        "sprite": "none"
         }
     ]
 }

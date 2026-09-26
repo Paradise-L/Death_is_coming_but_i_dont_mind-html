@@ -20,4 +20,5 @@ HTML5, ([github-pages](https://paradise-l.github.io/Death_is_coming_but_i_dont_m
 ## автор
 
 🪽Paradise-L🪽
+
 Арт, сюжет, музыкальное сопровождение и кодовая база разработаны с нуля без использования сторонних движков (Ren'Py и др.).
